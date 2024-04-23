@@ -1,9 +1,12 @@
 bash scripts/install_dependecies.sh
 
 rm data/*
+rm output/*
+hdfs dfs -rm -r /user/team20/project
 
 kaggle datasets download -d dsfelix/animes-dataset-2023
-unzip animes-dataset-2023.zip -d data
+unzip -o animes-dataset-2023.zip -d data
+echo "unzip done"
 rm animes-dataset-2023.zip
 rm -r data/assets
 rm -r data/reports

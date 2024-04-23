@@ -1,0 +1,1 @@
+Enter password for jdbc:hive2://hadoop-03.uni.innopolis.ru:10001/: 
