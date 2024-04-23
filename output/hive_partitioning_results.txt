@@ -1,0 +1,611 @@
+Connecting to jdbc:hive2://hadoop-03.uni.innopolis.ru:10001
+2024-04-23 21:07:04,300 INFO jdbc.Utils: Supplied authorities: hadoop-03.uni.innopolis.ru:10001
+2024-04-23 21:07:04,301 INFO jdbc.Utils: Resolved authority: hadoop-03.uni.innopolis.ru:10001
+Connected to: Apache Hive (version 3.1.3)
+Driver: Hive JDBC (version 2.3.9)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> use team20_projectdb;
+INFO  : Compiling command(queryId=hive_20240423210704_ef1c4647-d6c7-422c-90cf-5b27a0d7444b): use team20_projectdb
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : EXPLAIN output for queryid hive_20240423210704_ef1c4647-d6c7-422c-90cf-5b27a0d7444b : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [DDL]
+
+STAGE PLANS:
+  Stage: Stage-0
+
+
+INFO  : Completed compiling command(queryId=hive_20240423210704_ef1c4647-d6c7-422c-90cf-5b27a0d7444b); Time taken: 0.053 seconds
+INFO  : Executing command(queryId=hive_20240423210704_ef1c4647-d6c7-422c-90cf-5b27a0d7444b): use team20_projectdb
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20240423210704_ef1c4647-d6c7-422c-90cf-5b27a0d7444b); Time taken: 0.008 seconds
+INFO  : OK
+No rows affected (0.099 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE anime_part_buck(
+. . . . . . . . . . . . . . . . . . . . . . .>     id int, 
+. . . . . . . . . . . . . . . . . . . . . . .>     title varchar(512), 
+. . . . . . . . . . . . . . . . . . . . . . .>     score float, 
+. . . . . . . . . . . . . . . . . . . . . . .>     genres varchar(4096), 
+. . . . . . . . . . . . . . . . . . . . . . .>     synopsis varchar(4096), 
+. . . . . . . . . . . . . . . . . . . . . . .>     type varchar(8), 
+. . . . . . . . . . . . . . . . . . . . . . .>     episodes int,
+. . . . . . . . . . . . . . . . . . . . . . .>     is_airing boolean,
+. . . . . . . . . . . . . . . . . . . . . . .>     producers varchar(2048),
+. . . . . . . . . . . . . . . . . . . . . . .>     licensors varchar(2048),
+. . . . . . . . . . . . . . . . . . . . . . .>     studios varchar(1024),
+. . . . . . . . . . . . . . . . . . . . . . .>     source varchar(64),
+. . . . . . . . . . . . . . . . . . . . . . .>     duration varchar(64),
+. . . . . . . . . . . . . . . . . . . . . . .>     rank int,
+. . . . . . . . . . . . . . . . . . . . . . .>     popularity int,
+. . . . . . . . . . . . . . . . . . . . . . .>     favorites int,
+. . . . . . . . . . . . . . . . . . . . . . .>     scored_by int,
+. . . . . . . . . . . . . . . . . . . . . . .>   members int
+. . . . . . . . . . . . . . . . . . . . . . .>   ) 
+. . . . . . . . . . . . . . . . . . . . . . .>     PARTITIONED BY (rating varchar(64)) 
+. . . . . . . . . . . . . . . . . . . . . . .>     CLUSTERED BY (id) into 7 buckets
+. . . . . . . . . . . . . . . . . . . . . . .>     STORED AS AVRO LOCATION '/user/team20/project/hive/warehouse/anime_part_b uck' 
+. . . . . . . . . . . . . . . . . . . . . . .>     TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY');
+INFO  : Compiling command(queryId=hive_20240423210704_cad113ee-8b07-4e39-9c80-8821ab193cf5): CREATE EXTERNAL TABLE anime_part_buck(
+id int,
+title varchar(512),
+score float,
+genres varchar(4096),
+synopsis varchar(4096),
+type varchar(8),
+episodes int,
+is_airing boolean,
+producers varchar(2048),
+licensors varchar(2048),
+studios varchar(1024),
+source varchar(64),
+duration varchar(64),
+rank int,
+popularity int,
+favorites int,
+scored_by int,
+members int
+)
+PARTITIONED BY (rating varchar(64))
+CLUSTERED BY (id) into 7 buckets
+STORED AS AVRO LOCATION '/user/team20/project/hive/warehouse/anime_part_buck'
+TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY')
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : EXPLAIN output for queryid hive_20240423210704_cad113ee-8b07-4e39-9c80-8821ab193cf5 : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [DDL]
+
+STAGE PLANS:
+  Stage: Stage-0
+      Create Table Operator:
+        Create Table
+          bucket columns: id
+          columns: id int, title varchar(512), score float, genres varchar(4096), synopsis varchar(4096), type varchar(8), episodes int, is_airing boolean, producers varchar(2048), licensors varchar(2048), studios varchar(1024), source varchar(64), duration varchar(64), rank int, popularity int, favorites int, scored_by int, members int
+          input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+          location: /user/team20/project/hive/warehouse/anime_part_buck
+          # buckets: 7
+          output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+          partition columns: rating varchar(64)
+          serde name: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+          name: team20_projectdb.anime_part_buck
+          table properties:
+            AVRO.COMPRESS SNAPPY
+          isExternal: true
+
+
+INFO  : Completed compiling command(queryId=hive_20240423210704_cad113ee-8b07-4e39-9c80-8821ab193cf5); Time taken: 0.024 seconds
+INFO  : Executing command(queryId=hive_20240423210704_cad113ee-8b07-4e39-9c80-8821ab193cf5): CREATE EXTERNAL TABLE anime_part_buck(
+id int,
+title varchar(512),
+score float,
+genres varchar(4096),
+synopsis varchar(4096),
+type varchar(8),
+episodes int,
+is_airing boolean,
+producers varchar(2048),
+licensors varchar(2048),
+studios varchar(1024),
+source varchar(64),
+duration varchar(64),
+rank int,
+popularity int,
+favorites int,
+scored_by int,
+members int
+)
+PARTITIONED BY (rating varchar(64))
+CLUSTERED BY (id) into 7 buckets
+STORED AS AVRO LOCATION '/user/team20/project/hive/warehouse/anime_part_buck'
+TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY')
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20240423210704_cad113ee-8b07-4e39-9c80-8821ab193cf5); Time taken: 0.035 seconds
+INFO  : OK
+No rows affected (0.085 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.dynamic.partition.mode=nonstrict;
+No rows affected (0.002 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> INSERT INTO TABLE anime_part_buck PARTITION (rating)
+. . . . . . . . . . . . . . . . . . . . . . .> SELECT
+. . . . . . . . . . . . . . . . . . . . . . .>     id,
+. . . . . . . . . . . . . . . . . . . . . . .>     title,
+. . . . . . . . . . . . . . . . . . . . . . .>     score,
+. . . . . . . . . . . . . . . . . . . . . . .>     genres,
+. . . . . . . . . . . . . . . . . . . . . . .>     synopsis,
+. . . . . . . . . . . . . . . . . . . . . . .>     type,
+. . . . . . . . . . . . . . . . . . . . . . .>     episodes,
+. . . . . . . . . . . . . . . . . . . . . . .>     is_airing,
+. . . . . . . . . . . . . . . . . . . . . . .>     producers,
+. . . . . . . . . . . . . . . . . . . . . . .>     licensors,
+. . . . . . . . . . . . . . . . . . . . . . .>     studios,
+. . . . . . . . . . . . . . . . . . . . . . .>     source,
+. . . . . . . . . . . . . . . . . . . . . . .>     duration,
+. . . . . . . . . . . . . . . . . . . . . . .>     rank,
+. . . . . . . . . . . . . . . . . . . . . . .>     popularity,
+. . . . . . . . . . . . . . . . . . . . . . .>     favorites,
+. . . . . . . . . . . . . . . . . . . . . . .>     scored_by,
+. . . . . . . . . . . . . . . . . . . . . . .>     members,
+. . . . . . . . . . . . . . . . . . . . . . .>     rating
+. . . . . . . . . . . . . . . . . . . . . . .> FROM anime;
+INFO  : Compiling command(queryId=hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f): INSERT INTO TABLE anime_part_buck PARTITION (rating)
+SELECT
+id,
+title,
+score,
+genres,
+synopsis,
+type,
+episodes,
+is_airing,
+producers,
+licensors,
+studios,
+source,
+duration,
+rank,
+popularity,
+favorites,
+scored_by,
+members,
+rating
+FROM anime
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:_col0, type:int, comment:null), FieldSchema(name:_col1, type:varchar(512), comment:null), FieldSchema(name:_col2, type:float, comment:null), FieldSchema(name:_col3, type:varchar(4096), comment:null), FieldSchema(name:_col4, type:varchar(4096), comment:null), FieldSchema(name:_col5, type:varchar(8), comment:null), FieldSchema(name:_col6, type:int, comment:null), FieldSchema(name:_col7, type:boolean, comment:null), FieldSchema(name:_col8, type:varchar(2048), comment:null), FieldSchema(name:_col9, type:varchar(2048), comment:null), FieldSchema(name:_col10, type:varchar(1024), comment:null), FieldSchema(name:_col11, type:varchar(64), comment:null), FieldSchema(name:_col12, type:varchar(64), comment:null), FieldSchema(name:_col13, type:int, comment:null), FieldSchema(name:_col14, type:int, comment:null), FieldSchema(name:_col15, type:int, comment:null), FieldSchema(name:_col16, type:int, comment:null), FieldSchema(name:_col17, type:int, comment:null), FieldSchema(name:_col18, type:string, comment:null)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f : STAGE DEPENDENCIES:
+  Stage-1 is a root stage [MAPRED]
+  Stage-2 depends on stages: Stage-1 [DEPENDENCY_COLLECTION]
+  Stage-0 depends on stages: Stage-2 [MOVE]
+  Stage-3 depends on stages: Stage-0 [STATS]
+
+STAGE PLANS:
+  Stage: Stage-1
+    Tez
+      DagId: hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f:428
+      Edges:
+        Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
+        Reducer 3 <- Reducer 2 (SIMPLE_EDGE)
+      DagName: hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f:428
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: anime
+                  Statistics: Num rows: 59602 Data size: 72715200 Basic stats: COMPLETE Column stats: NONE
+                  GatherStats: false
+                  Select Operator
+                    expressions: id (type: int), title (type: string), score (type: float), genres (type: string), synopsis (type: string), type (type: string), episodes (type: int), is_airing (type: boolean), producers (type: string), licensors (type: string), studios (type: string), source (type: string), duration (type: string), rank (type: int), popularity (type: int), favorites (type: int), scored_by (type: int), members (type: int), rating (type: string)
+                    outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18
+                    Statistics: Num rows: 59602 Data size: 72715200 Basic stats: COMPLETE Column stats: NONE
+                    Reduce Output Operator
+                      null sort order: 
+                      sort order: 
+                      Map-reduce partition columns: _col0 (type: int)
+                      Statistics: Num rows: 59602 Data size: 72715200 Basic stats: COMPLETE Column stats: NONE
+                      tag: -1
+                      value expressions: _col0 (type: int), _col1 (type: string), _col2 (type: float), _col3 (type: string), _col4 (type: string), _col5 (type: string), _col6 (type: int), _col7 (type: boolean), _col8 (type: string), _col9 (type: string), _col10 (type: string), _col11 (type: string), _col12 (type: string), _col13 (type: int), _col14 (type: int), _col15 (type: int), _col16 (type: int), _col17 (type: int), _col18 (type: string)
+                      auto parallelism: false
+            Execution mode: vectorized
+            Path -> Alias:
+              hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/warehouse/anime [anime]
+            Path -> Partition:
+              hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/warehouse/anime 
+                Partition
+                  base file name: anime
+                  input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                  properties:
+                    EXTERNAL TRUE
+                    avro.schema.url /user/team20/project/warehouse/avsc/anime.avsc
+                    bucket_count -1
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns id,title,score,genres,synopsis,type,episodes,is_airing,producers,licensors,studios,source,duration,rating,rank,popularity,favorites,scored_by,members
+                    columns.comments 
+                    columns.types int:string:float:string:string:string:int:boolean:string:string:string:string:string:string:int:int:int:int:int
+                    file.inputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                    file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                    location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/warehouse/anime
+                    name team20_projectdb.anime
+                    numFiles 1
+                    serialization.ddl struct anime { i32 id, string title, float score, string genres, string synopsis, string type, i32 episodes, bool is_airing, string producers, string licensors, string studios, string source, string duration, string rating, i32 rank, i32 popularity, i32 favorites, i32 scored_by, i32 members}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                    totalSize 7271520
+                    transient_lastDdlTime 1713895623
+                  serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                
+                    input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                    properties:
+                      EXTERNAL TRUE
+                      avro.schema.literal {"type":"record","name":"anime","doc":"Sqoop import of anime","fields":[{"name":"id","type":["null","int"],"default":null,"columnName":"id","sqlType":"4"},{"name":"title","type":["null","string"],"default":null,"columnName":"title","sqlType":"12"},{"name":"score","type":["null","float"],"default":null,"columnName":"score","sqlType":"7"},{"name":"genres","type":["null","string"],"default":null,"columnName":"genres","sqlType":"12"},{"name":"synopsis","type":["null","string"],"default":null,"columnName":"synopsis","sqlType":"12"},{"name":"type","type":["null","string"],"default":null,"columnName":"type","sqlType":"12"},{"name":"episodes","type":["null","int"],"default":null,"columnName":"episodes","sqlType":"5"},{"name":"is_airing","type":["null","boolean"],"default":null,"columnName":"is_airing","sqlType":"-7"},{"name":"producers","type":["null","string"],"default":null,"columnName":"producers","sqlType":"12"},{"name":"licensors","type":["null","string"],"default":null,"columnName":"licensors","sqlType":"12"},{"name":"studios","type":["null","string"],"default":null,"columnName":"studios","sqlType":"12"},{"name":"source","type":["null","string"],"default":null,"columnName":"source","sqlType":"12"},{"name":"duration","type":["null","string"],"default":null,"columnName":"duration","sqlType":"12"},{"name":"rating","type":["null","string"],"default":null,"columnName":"rating","sqlType":"12"},{"name":"rank","type":["null","int"],"default":null,"columnName":"rank","sqlType":"4"},{"name":"popularity","type":["null","int"],"default":null,"columnName":"popularity","sqlType":"4"},{"name":"favorites","type":["null","int"],"default":null,"columnName":"favorites","sqlType":"4"},{"name":"scored_by","type":["null","int"],"default":null,"columnName":"scored_by","sqlType":"4"},{"name":"members","type":["null","int"],"default":null,"columnName":"members","sqlType":"4"}],"tableName":"anime"}
+                      avro.schema.url /user/team20/project/warehouse/avsc/anime.avsc
+                      bucket_count -1
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns id,title,score,genres,synopsis,type,episodes,is_airing,producers,licensors,studios,source,duration,rating,rank,popularity,favorites,scored_by,members
+                      columns.comments 
+                      columns.types int:string:float:string:string:string:int:boolean:string:string:string:string:string:string:int:int:int:int:int
+                      file.inputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                      file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                      location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/warehouse/anime
+                      name team20_projectdb.anime
+                      numFiles 1
+                      serialization.ddl struct anime { i32 id, string title, float score, string genres, string synopsis, string type, i32 episodes, bool is_airing, string producers, string licensors, string studios, string source, string duration, string rating, i32 rank, i32 popularity, i32 favorites, i32 scored_by, i32 members}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                      totalSize 7271520
+                      transient_lastDdlTime 1713895623
+                    serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                    name: team20_projectdb.anime
+                  name: team20_projectdb.anime
+            Truncated Path -> Alias:
+              hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/warehouse/anime [anime]
+        Reducer 2 
+            Needs Tagging: false
+            Reduce Operator Tree:
+              Select Operator
+                expressions: VALUE._col0 (type: int), CAST( VALUE._col1 AS varchar(512)) (type: varchar(512)), VALUE._col2 (type: float), CAST( VALUE._col3 AS varchar(4096)) (type: varchar(4096)), CAST( VALUE._col4 AS varchar(4096)) (type: varchar(4096)), CAST( VALUE._col5 AS varchar(8)) (type: varchar(8)), VALUE._col6 (type: int), VALUE._col7 (type: boolean), CAST( VALUE._col8 AS varchar(2048)) (type: varchar(2048)), CAST( VALUE._col9 AS varchar(2048)) (type: varchar(2048)), CAST( VALUE._col10 AS varchar(1024)) (type: varchar(1024)), CAST( VALUE._col11 AS varchar(64)) (type: varchar(64)), CAST( VALUE._col12 AS varchar(64)) (type: varchar(64)), VALUE._col13 (type: int), VALUE._col14 (type: int), VALUE._col15 (type: int), VALUE._col16 (type: int), VALUE._col17 (type: int), VALUE._col18 (type: string)
+                outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18
+                Statistics: Num rows: 59602 Data size: 72715200 Basic stats: COMPLETE Column stats: NONE
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 1
+                  directory: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-04-23_21-07-04_866_5713692289707034208-2/-ext-10000
+                  NumFilesPerFileSink: 1
+                  Statistics: Num rows: 59602 Data size: 72715200 Basic stats: COMPLETE Column stats: NONE
+                  Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-04-23_21-07-04_866_5713692289707034208-2/-ext-10000/
+                  table:
+                      input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                      properties:
+                        AVRO.COMPRESS SNAPPY
+                        EXTERNAL TRUE
+                        avro.schema.literal {"type":"record","name":"anime_part_buck","namespace":"team20_projectdb","fields":[{"name":"id","type":["null","int"],"default":null},{"name":"title","type":["null",{"type":"string","logicalType":"varchar","maxLength":512}],"default":null},{"name":"score","type":["null","float"],"default":null},{"name":"genres","type":["null",{"type":"string","logicalType":"varchar","maxLength":4096}],"default":null},{"name":"synopsis","type":["null",{"type":"string","logicalType":"varchar","maxLength":4096}],"default":null},{"name":"type","type":["null",{"type":"string","logicalType":"varchar","maxLength":8}],"default":null},{"name":"episodes","type":["null","int"],"default":null},{"name":"is_airing","type":["null","boolean"],"default":null},{"name":"producers","type":["null",{"type":"string","logicalType":"varchar","maxLength":2048}],"default":null},{"name":"licensors","type":["null",{"type":"string","logicalType":"varchar","maxLength":2048}],"default":null},{"name":"studios","type":["null",{"type":"string","logicalType":"varchar","maxLength":1024}],"default":null},{"name":"source","type":["null",{"type":"string","logicalType":"varchar","maxLength":64}],"default":null},{"name":"duration","type":["null",{"type":"string","logicalType":"varchar","maxLength":64}],"default":null},{"name":"rank","type":["null","int"],"default":null},{"name":"popularity","type":["null","int"],"default":null},{"name":"favorites","type":["null","int"],"default":null},{"name":"scored_by","type":["null","int"],"default":null},{"name":"members","type":["null","int"],"default":null}]}
+                        bucket_count 7
+                        bucket_field_name id
+                        bucketing_version 2
+                        column.name.delimiter ,
+                        columns id,title,score,genres,synopsis,type,episodes,is_airing,producers,licensors,studios,source,duration,rank,popularity,favorites,scored_by,members
+                        columns.comments 
+                        columns.types int:varchar(512):float:varchar(4096):varchar(4096):varchar(8):int:boolean:varchar(2048):varchar(2048):varchar(1024):varchar(64):varchar(64):int:int:int:int:int
+                        file.inputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                        file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                        location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck
+                        name team20_projectdb.anime_part_buck
+                        partition_columns rating
+                        partition_columns.types varchar(64)
+                        serialization.ddl struct anime_part_buck { i32 id, varchar(512) title, float score, varchar(4096) genres, varchar(4096) synopsis, varchar(8) type, i32 episodes, bool is_airing, varchar(2048) producers, varchar(2048) licensors, varchar(1024) studios, varchar(64) source, varchar(64) duration, i32 rank, i32 popularity, i32 favorites, i32 scored_by, i32 members}
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                        transient_lastDdlTime 1713895624
+                      serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                      name: team20_projectdb.anime_part_buck
+                  TotalFiles: 1
+                  GatherStats: true
+                  MultiFileSpray: false
+                Select Operator
+                  expressions: _col0 (type: int), _col1 (type: varchar(512)), _col2 (type: float), _col3 (type: varchar(4096)), _col4 (type: varchar(4096)), _col5 (type: varchar(8)), _col6 (type: int), _col7 (type: boolean), _col8 (type: varchar(2048)), _col9 (type: varchar(2048)), _col10 (type: varchar(1024)), _col11 (type: varchar(64)), _col12 (type: varchar(64)), _col13 (type: int), _col14 (type: int), _col15 (type: int), _col16 (type: int), _col17 (type: int), CAST( _col18 AS varchar(64)) (type: varchar(64))
+                  outputColumnNames: id, title, score, genres, synopsis, type, episodes, is_airing, producers, licensors, studios, source, duration, rank, popularity, favorites, scored_by, members, rating
+                  Statistics: Num rows: 59602 Data size: 72715200 Basic stats: COMPLETE Column stats: NONE
+                  Group By Operator
+                    aggregations: compute_stats(id, 'hll'), compute_stats(title, 'hll'), compute_stats(score, 'hll'), compute_stats(genres, 'hll'), compute_stats(synopsis, 'hll'), compute_stats(type, 'hll'), compute_stats(episodes, 'hll'), compute_stats(is_airing, 'hll'), compute_stats(producers, 'hll'), compute_stats(licensors, 'hll'), compute_stats(studios, 'hll'), compute_stats(source, 'hll'), compute_stats(duration, 'hll'), compute_stats(rank, 'hll'), compute_stats(popularity, 'hll'), compute_stats(favorites, 'hll'), compute_stats(scored_by, 'hll'), compute_stats(members, 'hll')
+                    keys: rating (type: varchar(64))
+                    mode: hash
+                    outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18
+                    Statistics: Num rows: 59602 Data size: 72715200 Basic stats: COMPLETE Column stats: NONE
+                    Reduce Output Operator
+                      key expressions: _col0 (type: varchar(64))
+                      null sort order: a
+                      sort order: +
+                      Map-reduce partition columns: _col0 (type: varchar(64))
+                      Statistics: Num rows: 59602 Data size: 72715200 Basic stats: COMPLETE Column stats: NONE
+                      tag: -1
+                      value expressions: _col1 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col2 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col3 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,bitvector:binary>), _col4 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col5 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col6 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col7 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col8 (type: struct<columntype:string,counttrues:bigint,countfalses:bigint,countnulls:bigint>), _col9 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col10 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col11 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col12 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col13 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col14 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col15 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col16 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col17 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col18 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>)
+                      auto parallelism: true
+        Reducer 3 
+            Needs Tagging: false
+            Reduce Operator Tree:
+              Group By Operator
+                aggregations: compute_stats(VALUE._col0), compute_stats(VALUE._col1), compute_stats(VALUE._col2), compute_stats(VALUE._col3), compute_stats(VALUE._col4), compute_stats(VALUE._col5), compute_stats(VALUE._col6), compute_stats(VALUE._col7), compute_stats(VALUE._col8), compute_stats(VALUE._col9), compute_stats(VALUE._col10), compute_stats(VALUE._col11), compute_stats(VALUE._col12), compute_stats(VALUE._col13), compute_stats(VALUE._col14), compute_stats(VALUE._col15), compute_stats(VALUE._col16), compute_stats(VALUE._col17)
+                keys: KEY._col0 (type: varchar(64))
+                mode: mergepartial
+                outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18
+                Statistics: Num rows: 29801 Data size: 36357600 Basic stats: COMPLETE Column stats: NONE
+                Select Operator
+                  expressions: _col1 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col2 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col3 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col4 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col5 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col6 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col7 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col8 (type: struct<columntype:string,counttrues:bigint,countfalses:bigint,countnulls:bigint>), _col9 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col10 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col11 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col12 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col13 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col14 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col15 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col16 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col17 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col18 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col0 (type: varchar(64))
+                  outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18
+                  Statistics: Num rows: 29801 Data size: 36357600 Basic stats: COMPLETE Column stats: NONE
+                  File Output Operator
+                    compressed: false
+                    GlobalTableId: 0
+                    directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team20/849f041d-c770-43e1-99fa-20b023d29889/hive_2024-04-23_21-07-05_017_3149265087638726574-2/-mr-10000/.hive-staging_hive_2024-04-23_21-07-05_017_3149265087638726574-2/-ext-10001
+                    NumFilesPerFileSink: 1
+                    Statistics: Num rows: 29801 Data size: 36357600 Basic stats: COMPLETE Column stats: NONE
+                    Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team20/849f041d-c770-43e1-99fa-20b023d29889/hive_2024-04-23_21-07-05_017_3149265087638726574-2/-mr-10000/.hive-staging_hive_2024-04-23_21-07-05_017_3149265087638726574-2/-ext-10001/
+                    table:
+                        input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                        output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                        properties:
+                          columns _col0,_col1,_col2,_col3,_col4,_col5,_col6,_col7,_col8,_col9,_col10,_col11,_col12,_col13,_col14,_col15,_col16,_col17,_col18
+                          columns.types struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,counttrues:bigint,countfalses:bigint,countnulls:bigint>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:varchar(64)
+                          escape.delim \
+                          hive.serialization.extend.additional.nesting.levels true
+                          serialization.escape.crlf true
+                          serialization.format 1
+                          serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                        serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    TotalFiles: 1
+                    GatherStats: false
+                    MultiFileSpray: false
+
+  Stage: Stage-2
+    Dependency Collection
+
+  Stage: Stage-0
+    Move Operator
+      tables:
+          partition:
+            rating 
+          replace: false
+          source: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-04-23_21-07-04_866_5713692289707034208-2/-ext-10000
+          table:
+              input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+              output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+              properties:
+                AVRO.COMPRESS SNAPPY
+                EXTERNAL TRUE
+                avro.schema.literal {"type":"record","name":"anime_part_buck","namespace":"team20_projectdb","fields":[{"name":"id","type":["null","int"],"default":null},{"name":"title","type":["null",{"type":"string","logicalType":"varchar","maxLength":512}],"default":null},{"name":"score","type":["null","float"],"default":null},{"name":"genres","type":["null",{"type":"string","logicalType":"varchar","maxLength":4096}],"default":null},{"name":"synopsis","type":["null",{"type":"string","logicalType":"varchar","maxLength":4096}],"default":null},{"name":"type","type":["null",{"type":"string","logicalType":"varchar","maxLength":8}],"default":null},{"name":"episodes","type":["null","int"],"default":null},{"name":"is_airing","type":["null","boolean"],"default":null},{"name":"producers","type":["null",{"type":"string","logicalType":"varchar","maxLength":2048}],"default":null},{"name":"licensors","type":["null",{"type":"string","logicalType":"varchar","maxLength":2048}],"default":null},{"name":"studios","type":["null",{"type":"string","logicalType":"varchar","maxLength":1024}],"default":null},{"name":"source","type":["null",{"type":"string","logicalType":"varchar","maxLength":64}],"default":null},{"name":"duration","type":["null",{"type":"string","logicalType":"varchar","maxLength":64}],"default":null},{"name":"rank","type":["null","int"],"default":null},{"name":"popularity","type":["null","int"],"default":null},{"name":"favorites","type":["null","int"],"default":null},{"name":"scored_by","type":["null","int"],"default":null},{"name":"members","type":["null","int"],"default":null}]}
+                bucket_count 7
+                bucket_field_name id
+                bucketing_version 2
+                column.name.delimiter ,
+                columns id,title,score,genres,synopsis,type,episodes,is_airing,producers,licensors,studios,source,duration,rank,popularity,favorites,scored_by,members
+                columns.comments 
+                columns.types int:varchar(512):float:varchar(4096):varchar(4096):varchar(8):int:boolean:varchar(2048):varchar(2048):varchar(1024):varchar(64):varchar(64):int:int:int:int:int
+                file.inputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck
+                name team20_projectdb.anime_part_buck
+                partition_columns rating
+                partition_columns.types varchar(64)
+                serialization.ddl struct anime_part_buck { i32 id, varchar(512) title, float score, varchar(4096) genres, varchar(4096) synopsis, varchar(8) type, i32 episodes, bool is_airing, varchar(2048) producers, varchar(2048) licensors, varchar(1024) studios, varchar(64) source, varchar(64) duration, i32 rank, i32 popularity, i32 favorites, i32 scored_by, i32 members}
+                serialization.format 1
+                serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                transient_lastDdlTime 1713895624
+              serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+              name: team20_projectdb.anime_part_buck
+
+  Stage: Stage-3
+    Stats Work
+      Basic Stats Work:
+          Stats Aggregation Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-04-23_21-07-04_866_5713692289707034208-2/-ext-10000/
+      Column Stats Desc:
+          Columns: id, title, score, genres, synopsis, type, episodes, is_airing, producers, licensors, studios, source, duration, rank, popularity, favorites, scored_by, members
+          Column Types: int, varchar(512), float, varchar(4096), varchar(4096), varchar(8), int, boolean, varchar(2048), varchar(2048), varchar(1024), varchar(64), varchar(64), int, int, int, int, int
+          Table: team20_projectdb.anime_part_buck
+          Is Table Level Stats: false
+
+
+INFO  : Completed compiling command(queryId=hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f); Time taken: 0.205 seconds
+INFO  : Executing command(queryId=hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f): INSERT INTO TABLE anime_part_buck PARTITION (rating)
+SELECT
+id,
+title,
+score,
+genres,
+synopsis,
+type,
+episodes,
+is_airing,
+producers,
+licensors,
+studios,
+source,
+duration,
+rank,
+popularity,
+favorites,
+scored_by,
+members,
+rating
+FROM anime
+INFO  : Query ID = hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f
+INFO  : Total jobs = 1
+INFO  : Launching Job 1 out of 1
+INFO  : Starting task [Stage-1:MAPRED] in serial mode
+INFO  : Subscribed to counters: [] for queryId: hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f
+INFO  : Tez session hasn't been created yet. Opening session
+INFO  : Dag name: INSERT INTO TABLE anime_part_buck PA...anime (Stage-1)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1712530286381_1703)
+
+[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      7          0        0        7       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 1.69 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      1          0        0        1       0       0  
+Reducer 2        container        INITED      7          0        0        7       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 2.19 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING      1          0        1        0       0       0  
+Reducer 2        container        INITED      7          0        0        7       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 2.70 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING      1          0        1        0       0       0  
+Reducer 2        container        INITED      7          0        0        7       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 3.20 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING      1          0        1        0       0       0  
+Reducer 2        container        INITED      7          0        0        7       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 3.70 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING      1          0        1        0       0       0  
+Reducer 2        container        INITED      7          0        0        7       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 4.20 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2        container       RUNNING      7          0        1        6       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [==>>------------------------] 11%   ELAPSED TIME: 4.70 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2        container       RUNNING      7          1        1        5       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [=====>>---------------------] 22%   ELAPSED TIME: 5.21 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 .      container       RUNNING      7          2        1        4       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [========>>------------------] 33%   ELAPSED TIME: 5.71 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 ..     container       RUNNING      7          3        1        3       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [===========>>---------------] 44%   ELAPSED TIME: 6.21 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 ....   container       RUNNING      7          5        1        1       0       0  
+Reducer 3        container       RUNNING      1          0        1        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [=================>>---------] 66%   ELAPSED TIME: 6.71 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 ....   container       RUNNING      7          5        2        0       0       0  
+Reducer 3        container       RUNNING      1          0        1        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [=================>>---------] 66%   ELAPSED TIME: 7.72 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 .....  container       RUNNING      7          6        1        0       0       0  
+Reducer 3        container       RUNNING      1          0        1        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [====================>>------] 77%   ELAPSED TIME: 8.72 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 ...... container     SUCCEEDED      7          7        0        0       0       0  
+Reducer 3 ...... container     SUCCEEDED      1          1        0        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 9.72 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 ...... container     SUCCEEDED      7          7        0        0       0       0  
+Reducer 3 ...... container     SUCCEEDED      1          1        0        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 10.38 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+INFO  : Starting task [Stage-2:DEPENDENCY_COLLECTION] in serial mode
+INFO  : Starting task [Stage-0:MOVE] in serial mode
+INFO  : Loading data to table team20_projectdb.anime_part_buck partition (rating=null) from hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-04-23_21-07-04_866_5713692289707034208-2/-ext-10000
+INFO  : 
+
+INFO  : 	 Time taken to load dynamic partitions: 0.272 seconds
+INFO  : 	 Time taken for adding to write entity : 0.001 seconds
+INFO  : Starting task [Stage-3:STATS] in serial mode
+INFO  : Completed executing command(queryId=hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f); Time taken: 13.784 seconds
+INFO  : OK
+No rows affected (14.001 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS anime;
+INFO  : Compiling command(queryId=hive_20240423210718_2bc140c2-1ec5-4a46-8129-2bb2d1a946d3): DROP TABLE IF EXISTS anime
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : EXPLAIN output for queryid hive_20240423210718_2bc140c2-1ec5-4a46-8129-2bb2d1a946d3 : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [DDL]
+
+STAGE PLANS:
+  Stage: Stage-0
+      Drop Table Operator:
+        Drop Table
+          table: anime
+
+
+INFO  : Completed compiling command(queryId=hive_20240423210718_2bc140c2-1ec5-4a46-8129-2bb2d1a946d3); Time taken: 0.029 seconds
+INFO  : Executing command(queryId=hive_20240423210718_2bc140c2-1ec5-4a46-8129-2bb2d1a946d3): DROP TABLE IF EXISTS anime
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20240423210718_2bc140c2-1ec5-4a46-8129-2bb2d1a946d3); Time taken: 0.051 seconds
+INFO  : OK
+No rows affected (0.091 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001
