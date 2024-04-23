@@ -1,0 +1,11 @@
+*.java
+*.avsc
+data/*
+secrets/*
+objects
+
+*.save
+*.save.*
+
+# maybe need to stay
+*.log
