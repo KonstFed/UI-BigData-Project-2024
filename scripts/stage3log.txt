@@ -1,0 +1,243 @@
+2024-05-06 21:03:16,091 INFO fs.TrashPolicyDefault: Moved: 'hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/data' to trash at: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/.Trash/Current/user/team20/project/data
+rm: `/user/team20/project/output/evaluation': No such file or directory
+2024-05-06 21:03:20,898 INFO fs.TrashPolicyDefault: Moved: 'hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/models' to trash at: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/.Trash/Current/user/team20/project/models
+python3: can't open file '/home/team20/team20/bigdata-final-project-iu-2024.git/scripts/scripts/synopsis_embeddings.py': [Errno 2] No such file or directory
+2024-05-06 21:03:27,906 INFO util.ShutdownHookManager: Shutdown hook called
+2024-05-06 21:03:27,913 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-cb7c3ddc-ff4f-4164-8e61-711b8c44eadc
+python3: can't open file '/home/team20/team20/bigdata-final-project-iu-2024.git/scripts/scripts/baseline.py': [Errno 2] No such file or directory
+2024-05-06 21:03:29,516 INFO util.ShutdownHookManager: Shutdown hook called
+2024-05-06 21:03:29,517 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-fe7c6168-05ce-4b56-879b-3777998337db
+No spark is running
+2024-05-06 21:03:32,305 INFO spark.SparkContext: Running Spark version 3.2.4
+2024-05-06 21:03:32,465 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2024-05-06 21:03:32,638 INFO resource.ResourceUtils: ==============================================================
+2024-05-06 21:03:32,638 INFO resource.ResourceUtils: No custom resources configured for spark.driver.
+2024-05-06 21:03:32,639 INFO resource.ResourceUtils: ==============================================================
+2024-05-06 21:03:32,639 INFO spark.SparkContext: Submitted application: team20 - spark ML
+2024-05-06 21:03:32,715 INFO resource.ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+2024-05-06 21:03:32,756 INFO resource.ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+2024-05-06 21:03:32,768 INFO resource.ResourceProfileManager: Added ResourceProfile id: 0
+2024-05-06 21:03:33,936 INFO spark.SecurityManager: Changing view acls to: team20
+2024-05-06 21:03:33,936 INFO spark.SecurityManager: Changing modify acls to: team20
+2024-05-06 21:03:33,937 INFO spark.SecurityManager: Changing view acls groups to: 
+2024-05-06 21:03:33,937 INFO spark.SecurityManager: Changing modify acls groups to: 
+2024-05-06 21:03:33,938 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(team20); groups with view permissions: Set(); users  with modify permissions: Set(team20); groups with modify permissions: Set()
+2024-05-06 21:03:34,291 INFO util.Utils: Successfully started service 'sparkDriver' on port 41632.
+2024-05-06 21:03:34,325 INFO spark.SparkEnv: Registering MapOutputTracker
+2024-05-06 21:03:34,368 INFO spark.SparkEnv: Registering BlockManagerMaster
+2024-05-06 21:03:34,388 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2024-05-06 21:03:34,388 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+2024-05-06 21:03:34,419 INFO spark.SparkEnv: Registering BlockManagerMasterHeartbeat
+2024-05-06 21:03:34,447 INFO storage.DiskBlockManager: Created local directory at /tmp/blockmgr-c54d58e7-90ba-45bf-aa63-9c4ae6810cc7
+2024-05-06 21:03:34,477 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MiB
+2024-05-06 21:03:34,515 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+2024-05-06 21:03:34,611 INFO util.log: Logging initialized @4584ms to org.sparkproject.jetty.util.log.Slf4jLog
+2024-05-06 21:03:34,690 INFO server.Server: jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 1.8.0_402-b06
+2024-05-06 21:03:34,712 INFO server.Server: Started @4687ms
+2024-05-06 21:03:34,743 WARN util.Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+2024-05-06 21:03:34,743 WARN util.Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+2024-05-06 21:03:34,760 INFO server.AbstractConnector: Started ServerConnector@7f2f1cd8{HTTP/1.1, (http/1.1)}{0.0.0.0:4042}
+2024-05-06 21:03:34,760 INFO util.Utils: Successfully started service 'SparkUI' on port 4042.
+2024-05-06 21:03:34,783 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3cee48e9{/jobs,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,822 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2cb39904{/jobs/json,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,823 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4f1ed010{/jobs/job,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,830 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@75d67091{/jobs/job/json,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,831 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1bf43494{/stages,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,832 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1c6a02cc{/stages/json,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,832 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5512c27f{/stages/stage,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,834 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5aa5da1e{/stages/stage/json,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,834 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@16564fc0{/stages/pool,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,835 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4405ba03{/stages/pool/json,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,836 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3f4a5f15{/storage,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,836 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@417cec29{/storage/json,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,837 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6109e44{/storage/rdd,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,838 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@cb30844{/storage/rdd/json,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,838 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1b3f8172{/environment,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,844 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@60190d1a{/environment/json,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,844 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6087d8e5{/executors,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,845 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5ae7df8e{/executors/json,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,846 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@24e6d979{/executors/threadDump,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,847 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@41ce26e1{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,856 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6a01ba7a{/static,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,857 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@204bd3e6{/,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,858 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5fdef7a9{/api,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,859 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@10625bf0{/jobs/job/kill,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,859 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2c347602{/stages/stage/kill,null,AVAILABLE,@Spark}
+2024-05-06 21:03:34,861 INFO ui.SparkUI: Bound SparkUI to 0.0.0.0, and started at http://hadoop-01.uni.innopolis.ru:4042
+2024-05-06 21:03:35,347 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at hadoop-03.uni.innopolis.ru/10.100.30.59:8032
+2024-05-06 21:03:35,568 INFO client.AHSProxy: Connecting to Application History server at hadoop-04.uni.innopolis.ru/10.100.30.60:10200
+2024-05-06 21:03:35,655 INFO yarn.Client: Requesting a new application from cluster with 3 NodeManagers
+2024-05-06 21:03:36,066 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+2024-05-06 21:03:36,110 INFO conf.Configuration: resource-types.xml not found
+2024-05-06 21:03:36,110 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2024-05-06 21:03:36,122 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (14223 MB per container)
+2024-05-06 21:03:36,122 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+2024-05-06 21:03:36,122 INFO yarn.Client: Setting up container launch context for our AM
+2024-05-06 21:03:36,124 INFO yarn.Client: Setting up the launch environment for our AM container
+2024-05-06 21:03:36,128 INFO yarn.Client: Preparing resources for our AM container
+2024-05-06 21:03:36,162 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+2024-05-06 21:03:38,993 INFO yarn.Client: Uploading resource file:/tmp/spark-29e58948-b0fe-4a07-bdd6-8867feece625/__spark_libs__1174461759254873039.zip -> hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/.sparkStaging/application_1714478162935_1909/__spark_libs__1174461759254873039.zip
+2024-05-06 21:03:39,934 INFO yarn.Client: Uploading resource file:/usr/local/lib/python3.6/site-packages/pyspark/python/lib/pyspark.zip -> hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/.sparkStaging/application_1714478162935_1909/pyspark.zip
+2024-05-06 21:03:39,973 INFO yarn.Client: Uploading resource file:/usr/local/lib/python3.6/site-packages/pyspark/python/lib/py4j-0.10.9.5-src.zip -> hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/.sparkStaging/application_1714478162935_1909/py4j-0.10.9.5-src.zip
+2024-05-06 21:03:40,279 INFO yarn.Client: Uploading resource file:/tmp/spark-29e58948-b0fe-4a07-bdd6-8867feece625/__spark_conf__1453683733575291466.zip -> hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/.sparkStaging/application_1714478162935_1909/__spark_conf__.zip
+2024-05-06 21:03:40,320 INFO spark.SecurityManager: Changing view acls to: team20
+2024-05-06 21:03:40,320 INFO spark.SecurityManager: Changing modify acls to: team20
+2024-05-06 21:03:40,320 INFO spark.SecurityManager: Changing view acls groups to: 
+2024-05-06 21:03:40,320 INFO spark.SecurityManager: Changing modify acls groups to: 
+2024-05-06 21:03:40,320 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(team20); groups with view permissions: Set(); users  with modify permissions: Set(team20); groups with modify permissions: Set()
+2024-05-06 21:03:40,335 INFO yarn.Client: Submitting application application_1714478162935_1909 to ResourceManager
+2024-05-06 21:03:40,366 INFO impl.YarnClientImpl: Submitted application application_1714478162935_1909
+2024-05-06 21:03:41,369 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:41,372 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: [Mon May 06 21:03:40 +0300 2024] Application is added to the scheduler and is not yet activated. Queue's AM resource limit exceeded.  Details : AM Partition = <DEFAULT_PARTITION>; AM Resource Request = <memory:1024, vCores:1>; Queue Resource Limit for AM = <memory:9216, vCores:12>; User AM Resource Limit of the queue = <memory:9216, vCores:12>; Queue AM Resource Usage = <memory:9216, vCores:12>; 
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: teams
+	 start time: 1715018620342
+	 final status: UNDEFINED
+	 tracking URL: http://hadoop-03.uni.innopolis.ru:8088/proxy/application_1714478162935_1909/
+	 user: team20
+2024-05-06 21:03:42,373 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:43,375 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:44,376 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:45,378 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:46,379 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:47,381 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:48,382 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:49,384 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:50,385 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:51,387 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:52,388 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:53,389 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:54,391 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:55,394 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:56,395 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:57,396 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:58,398 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:03:59,399 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:00,401 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:01,402 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:02,404 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:03,407 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:04,408 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:05,410 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:06,412 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:07,414 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:08,415 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:09,416 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:10,417 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:11,419 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:12,420 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:13,422 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:14,423 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:15,424 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:16,427 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:17,428 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:18,429 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:19,431 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:20,432 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:21,434 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:22,435 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:23,437 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:24,438 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:25,440 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:26,441 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:27,443 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:28,445 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:29,446 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:30,448 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:31,449 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:32,451 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:33,452 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:34,454 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:35,455 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:36,456 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:37,458 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:38,459 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:39,463 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:40,471 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:41,475 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:42,476 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:43,478 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:44,479 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:45,480 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:46,482 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:47,483 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:48,485 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:49,486 INFO yarn.Client: Application report for application_1714478162935_1909 (state: ACCEPTED)
+2024-05-06 21:04:49,711 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> hadoop-03.uni.innopolis.ru, PROXY_URI_BASES -> http://hadoop-03.uni.innopolis.ru:8088/proxy/application_1714478162935_1909), /proxy/application_1714478162935_1909
+2024-05-06 21:04:50,430 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+2024-05-06 21:04:50,487 INFO yarn.Client: Application report for application_1714478162935_1909 (state: RUNNING)
+2024-05-06 21:04:50,488 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.100.30.58
+	 ApplicationMaster RPC port: -1
+	 queue: teams
+	 start time: 1715018620342
+	 final status: UNDEFINED
+	 tracking URL: http://hadoop-03.uni.innopolis.ru:8088/proxy/application_1714478162935_1909/
+	 user: team20
+2024-05-06 21:04:50,489 INFO cluster.YarnClientSchedulerBackend: Application application_1714478162935_1909 has started running.
+2024-05-06 21:04:50,497 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41401.
+2024-05-06 21:04:50,497 INFO netty.NettyBlockTransferService: Server created on hadoop-01.uni.innopolis.ru:41401
+2024-05-06 21:04:50,498 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2024-05-06 21:04:50,505 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, hadoop-01.uni.innopolis.ru, 41401, None)
+2024-05-06 21:04:50,509 INFO storage.BlockManagerMasterEndpoint: Registering block manager hadoop-01.uni.innopolis.ru:41401 with 366.3 MiB RAM, BlockManagerId(driver, hadoop-01.uni.innopolis.ru, 41401, None)
+2024-05-06 21:04:50,511 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, hadoop-01.uni.innopolis.ru, 41401, None)
+2024-05-06 21:04:50,513 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, hadoop-01.uni.innopolis.ru, 41401, None)
+2024-05-06 21:04:50,650 INFO ui.ServerInfo: Adding filter to /metrics/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+2024-05-06 21:04:50,652 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@13ed1207{/metrics/json,null,AVAILABLE,@Spark}
+2024-05-06 21:04:50,684 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after waiting maxRegisteredResourcesWaitingTime: 30000000000(ns)
+/usr/local/lib/python3.6/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py:238: FutureWarning: Python 3.6 support is deprecated in Spark 3.2.
+  FutureWarning
+2024-05-06 21:04:50,878 INFO internal.SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+2024-05-06 21:04:50,880 INFO internal.SharedState: Warehouse path is 'hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse'.
+2024-05-06 21:04:50,896 INFO ui.ServerInfo: Adding filter to /SQL: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+2024-05-06 21:04:50,897 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1b6d20e0{/SQL,null,AVAILABLE,@Spark}
+2024-05-06 21:04:50,897 INFO ui.ServerInfo: Adding filter to /SQL/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+2024-05-06 21:04:50,901 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@44de59f5{/SQL/json,null,AVAILABLE,@Spark}
+2024-05-06 21:04:50,902 INFO ui.ServerInfo: Adding filter to /SQL/execution: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+2024-05-06 21:04:50,903 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3bd9fbf7{/SQL/execution,null,AVAILABLE,@Spark}
+2024-05-06 21:04:50,903 INFO ui.ServerInfo: Adding filter to /SQL/execution/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+2024-05-06 21:04:50,904 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2cabfccb{/SQL/execution/json,null,AVAILABLE,@Spark}
+2024-05-06 21:04:50,905 INFO ui.ServerInfo: Adding filter to /static/sql: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+2024-05-06 21:04:50,906 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@453405af{/static/sql,null,AVAILABLE,@Spark}
+2024-05-06 21:04:53,729 INFO conf.HiveConf: Found configuration file null
+2024-05-06 21:04:53,742 INFO hive.HiveUtils: Initializing HiveMetastoreConnection version 2.3.9 using Spark classes.
+2024-05-06 21:04:53,807 INFO conf.HiveConf: Found configuration file null
+2024-05-06 21:04:53,983 INFO client.HiveClientImpl: Warehouse location for Hive client (version 2.3.9) is hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse
+2024-05-06 21:04:54,036 INFO hive.metastore: Trying to connect to metastore with URI thrift://hadoop-02.uni.innopolis.ru:9883
+2024-05-06 21:04:54,056 INFO hive.metastore: Opened a connection to metastore, current connections: 1
+2024-05-06 21:04:54,070 INFO hive.metastore: Connected to metastore.
+Traceback (most recent call last):
+  File "/home/team20/team20/bigdata-final-project-iu-2024.git/scripts/item_based_rec.py", line 56, in <module>
+    schema=schema
+  File "/usr/local/lib/python3.6/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 410, in csv
+  File "/usr/local/lib/python3.6/site-packages/pyspark/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/usr/local/lib/python3.6/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in deco
+pyspark.sql.utils.AnalysisException: Path does not exist: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/data/synopsis_embs.csv
+2024-05-06 21:04:54,391 INFO spark.SparkContext: Invoking stop() from shutdown hook
+2024-05-06 21:04:54,398 INFO server.AbstractConnector: Stopped Spark@7f2f1cd8{HTTP/1.1, (http/1.1)}{0.0.0.0:4042}
+2024-05-06 21:04:54,401 INFO ui.SparkUI: Stopped Spark web UI at http://hadoop-01.uni.innopolis.ru:4042
+2024-05-06 21:04:54,406 INFO cluster.YarnClientSchedulerBackend: Interrupting monitor thread
+2024-05-06 21:04:54,425 INFO cluster.YarnClientSchedulerBackend: Shutting down all executors
+2024-05-06 21:04:54,429 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+2024-05-06 21:04:54,432 INFO cluster.YarnClientSchedulerBackend: YARN client scheduler backend Stopped
+2024-05-06 21:04:54,441 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+2024-05-06 21:04:54,452 INFO memory.MemoryStore: MemoryStore cleared
+2024-05-06 21:04:54,453 INFO storage.BlockManager: BlockManager stopped
+2024-05-06 21:04:54,460 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+2024-05-06 21:04:54,462 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+2024-05-06 21:04:54,467 INFO spark.SparkContext: Successfully stopped SparkContext
+2024-05-06 21:04:54,467 INFO util.ShutdownHookManager: Shutdown hook called
+2024-05-06 21:04:54,468 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-29e58948-b0fe-4a07-bdd6-8867feece625
+2024-05-06 21:04:54,471 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-29e58948-b0fe-4a07-bdd6-8867feece625/pyspark-aa5c25f0-135d-4c86-b021-856e08757c06
+2024-05-06 21:04:54,472 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-3c8ba77f-5113-4bd9-b80e-e13ac0314026
+mkdir: cannot create directory ‘models’: File exists
+get: `/user/team20/project/models/model1.parquet': No such file or directory
+get: `/user/team20/project/models/model2.parquet': No such file or directory
+get: `/home/team20/team20/bigdata-final-project-iu-2024.git/output/model1_predictions/model1_predictions/_SUCCESS': File exists
+get: `/home/team20/team20/bigdata-final-project-iu-2024.git/output/model1_predictions/model1_predictions/part-00000-98f7cdbe-0354-4ceb-afa2-d0bf2a8e51c9-c000.snappy.parquet': File exists
+get: `/user/team20/project/output/model2_predictions': No such file or directory
