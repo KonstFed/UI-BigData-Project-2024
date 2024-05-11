@@ -1,0 +1,106 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: kaggle in /home/team20/.local/lib/python3.6/site-packages (1.6.11)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.6/site-packages (from kaggle) (4.64.1)
+Requirement already satisfied: six>=1.10 in /usr/local/lib/python3.6/site-packages (from kaggle) (1.16.0)
+Requirement already satisfied: python-slugify in /home/team20/.local/lib/python3.6/site-packages (from kaggle) (6.1.2)
+Requirement already satisfied: certifi>=2023.7.22 in /usr/local/lib/python3.6/site-packages (from kaggle) (2024.2.2)
+Requirement already satisfied: urllib3 in /usr/local/lib/python3.6/site-packages (from kaggle) (1.26.18)
+Requirement already satisfied: requests in /usr/local/lib/python3.6/site-packages (from kaggle) (2.27.1)
+Requirement already satisfied: bleach in /usr/local/lib/python3.6/site-packages (from kaggle) (4.1.0)
+Requirement already satisfied: python-dateutil in /usr/local/lib/python3.6/site-packages (from kaggle) (2.8.2)
+Requirement already satisfied: packaging in /usr/local/lib/python3.6/site-packages (from bleach->kaggle) (21.3)
+Requirement already satisfied: webencodings in /usr/local/lib/python3.6/site-packages (from bleach->kaggle) (0.5.1)
+Requirement already satisfied: text-unidecode>=1.3 in /home/team20/.local/lib/python3.6/site-packages (from python-slugify->kaggle) (1.3)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.6/site-packages (from requests->kaggle) (3.6)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /usr/local/lib/python3.6/site-packages (from requests->kaggle) (2.0.12)
+Requirement already satisfied: importlib-resources in /usr/local/lib/python3.6/site-packages (from tqdm->kaggle) (5.4.0)
+Requirement already satisfied: zipp>=3.1.0 in /usr/local/lib/python3.6/site-packages (from importlib-resources->tqdm->kaggle) (3.6.0)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /usr/local/lib/python3.6/site-packages (from packaging->bleach->kaggle) (3.1.2)
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: transformers in /home/team20/.local/lib/python3.6/site-packages (4.18.0)
+Requirement already satisfied: torch in /home/team20/.local/lib/python3.6/site-packages (1.10.2)
+Requirement already satisfied: regex!=2019.12.17 in /home/team20/.local/lib/python3.6/site-packages (from transformers) (2023.8.8)
+Requirement already satisfied: requests in /usr/local/lib/python3.6/site-packages (from transformers) (2.27.1)
+Requirement already satisfied: dataclasses in /usr/local/lib/python3.6/site-packages (from transformers) (0.8)
+Requirement already satisfied: numpy>=1.17 in /usr/local/lib64/python3.6/site-packages (from transformers) (1.19.5)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.6/site-packages (from transformers) (21.3)
+Requirement already satisfied: sacremoses in /home/team20/.local/lib/python3.6/site-packages (from transformers) (0.0.53)
+Requirement already satisfied: filelock in /home/team20/.local/lib/python3.6/site-packages (from transformers) (3.4.1)
+Requirement already satisfied: huggingface-hub<1.0,>=0.1.0 in /home/team20/.local/lib/python3.6/site-packages (from transformers) (0.4.0)
+Requirement already satisfied: importlib-metadata in /usr/local/lib/python3.6/site-packages (from transformers) (4.2.0)
+Requirement already satisfied: pyyaml>=5.1 in /usr/local/lib64/python3.6/site-packages (from transformers) (6.0.1)
+Requirement already satisfied: tokenizers!=0.11.3,<0.13,>=0.11.1 in /home/team20/.local/lib/python3.6/site-packages (from transformers) (0.12.1)
+Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.6/site-packages (from transformers) (4.64.1)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.6/site-packages (from torch) (4.1.1)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /usr/local/lib/python3.6/site-packages (from packaging>=20.0->transformers) (3.1.2)
+Requirement already satisfied: importlib-resources in /usr/local/lib/python3.6/site-packages (from tqdm>=4.27->transformers) (5.4.0)
+Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.6/site-packages (from importlib-metadata->transformers) (3.6.0)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.6/site-packages (from requests->transformers) (2024.2.2)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.6/site-packages (from requests->transformers) (3.6)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /usr/local/lib/python3.6/site-packages (from requests->transformers) (2.0.12)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /usr/local/lib/python3.6/site-packages (from requests->transformers) (1.26.18)
+Requirement already satisfied: six in /usr/local/lib/python3.6/site-packages (from sacremoses->transformers) (1.16.0)
+Requirement already satisfied: click in /home/team20/.local/lib/python3.6/site-packages (from sacremoses->transformers) (8.0.4)
+Requirement already satisfied: joblib in /home/team20/.local/lib/python3.6/site-packages (from sacremoses->transformers) (1.1.1)
+2024-05-11 13:45:32,483 INFO fs.TrashPolicyDefault: Moved: 'hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project' to trash at: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/.Trash/Current/user/team20/project
+Warning: Your Kaggle API key is readable by other users on this system! To fix this, you can run 'chmod 600 /home/team20/.kaggle/kaggle.json'
+Warning: Looks like you're using an outdated API Version, please consider updating (server 1.6.12 / client 1.6.11)
+Dataset URL: https://www.kaggle.com/datasets/dsfelix/animes-dataset-2023
+License(s): MIT
+Downloading animes-dataset-2023.zip to /home/team20/team20/bigdata-final-project-iu-2024.git
+  0%|          | 0.00/606M [00:00<?, ?B/s]  0%|          | 1.00M/606M [00:00<06:11, 1.71MB/s]  0%|          | 2.00M/606M [00:00<03:09, 3.34MB/s]  1%|          | 4.00M/606M [00:00<01:29, 7.04MB/s]  1%|▏         | 8.00M/606M [00:00<00:43, 14.4MB/s]  2%|▏         | 11.0M/606M [00:01<00:39, 15.6MB/s]  2%|▏         | 13.0M/606M [00:01<00:48, 12.8MB/s]  2%|▏         | 15.0M/606M [00:01<00:54, 11.4MB/s]  3%|▎         | 19.0M/606M [00:01<00:36, 16.7MB/s]  4%|▍         | 23.0M/606M [00:01<00:28, 21.6MB/s]  4%|▍         | 27.0M/606M [00:01<00:23, 25.7MB/s]  5%|▍         | 30.0M/606M [00:02<00:23, 25.3MB/s]  6%|▌         | 34.0M/606M [00:02<00:21, 27.7MB/s]  6%|▋         | 38.0M/606M [00:02<00:19, 30.8MB/s]  7%|▋         | 42.0M/606M [00:02<00:19, 29.9MB/s]  8%|▊         | 46.0M/606M [00:02<00:29, 19.6MB/s]  8%|▊         | 50.0M/606M [00:02<00:25, 23.2MB/s]  9%|▊         | 53.0M/606M [00:03<00:24, 24.0MB/s]  9%|▉         | 57.0M/606M [00:03<00:21, 27.4MB/s] 10%|█         | 61.0M/606M [00:03<00:23, 24.0MB/s] 11%|█         | 65.0M/606M [00:03<00:21, 26.1MB/s] 11%|█         | 68.0M/606M [00:03<00:22, 25.2MB/s] 12%|█▏        | 71.0M/606M [00:03<00:21, 26.5MB/s] 12%|█▏        | 74.0M/606M [00:03<00:21, 26.4MB/s] 13%|█▎        | 77.0M/606M [00:03<00:21, 25.3MB/s] 13%|█▎        | 81.0M/606M [00:04<00:19, 28.9MB/s] 14%|█▍        | 85.0M/606M [00:04<00:17, 31.8MB/s] 15%|█▍        | 89.0M/606M [00:04<00:16, 33.4MB/s] 15%|█▌        | 93.0M/606M [00:04<00:15, 34.0MB/s] 16%|█▌        | 97.0M/606M [00:04<00:22, 23.7MB/s] 17%|█▋        | 101M/606M [00:04<00:19, 27.0MB/s]  17%|█▋        | 105M/606M [00:05<00:26, 20.1MB/s] 18%|█▊        | 109M/606M [00:05<00:22, 23.6MB/s] 19%|█▊        | 113M/606M [00:05<00:22, 23.3MB/s] 19%|█▉        | 117M/606M [00:05<00:19, 26.5MB/s] 20%|█▉        | 121M/606M [00:05<00:17, 29.6MB/s] 21%|██        | 125M/606M [00:05<00:16, 29.7MB/s] 21%|██▏       | 129M/606M [00:05<00:15, 32.1MB/s] 22%|██▏       | 133M/606M [00:06<00:17, 27.9MB/s] 23%|██▎       | 137M/606M [00:06<00:15, 30.8MB/s] 23%|██▎       | 141M/606M [00:06<00:14, 33.0MB/s] 24%|██▍       | 145M/606M [00:06<00:16, 29.8MB/s] 25%|██▍       | 149M/606M [00:06<00:14, 32.2MB/s] 25%|██▌       | 153M/606M [00:06<00:13, 34.1MB/s] 26%|██▌       | 157M/606M [00:06<00:13, 35.1MB/s] 27%|██▋       | 161M/606M [00:06<00:15, 30.4MB/s] 27%|██▋       | 165M/606M [00:07<00:14, 32.7MB/s] 28%|██▊       | 169M/606M [00:07<00:14, 32.1MB/s] 29%|██▊       | 173M/606M [00:07<00:16, 28.3MB/s] 29%|██▉       | 177M/606M [00:07<00:14, 30.9MB/s] 30%|██▉       | 181M/606M [00:07<00:15, 27.9MB/s] 31%|███       | 185M/606M [00:07<00:14, 30.5MB/s] 31%|███       | 189M/606M [00:08<00:17, 25.0MB/s] 32%|███▏      | 193M/606M [00:08<00:16, 27.0MB/s] 33%|███▎      | 197M/606M [00:08<00:14, 29.9MB/s] 33%|███▎      | 201M/606M [00:08<00:13, 32.1MB/s] 34%|███▍      | 205M/606M [00:08<00:21, 19.9MB/s] 34%|███▍      | 209M/606M [00:08<00:17, 23.2MB/s] 35%|███▍      | 212M/606M [00:09<00:19, 21.4MB/s] 36%|███▌      | 216M/606M [00:09<00:16, 25.1MB/s] 36%|███▌      | 219M/606M [00:09<00:16, 24.4MB/s] 37%|███▋      | 223M/606M [00:09<00:14, 27.9MB/s] 37%|███▋      | 227M/606M [00:09<00:15, 25.4MB/s] 38%|███▊      | 231M/606M [00:09<00:13, 28.5MB/s] 39%|███▉      | 235M/606M [00:09<00:13, 27.8MB/s] 39%|███▉      | 239M/606M [00:10<00:12, 30.6MB/s] 40%|████      | 243M/606M [00:10<00:16, 23.2MB/s] 41%|████      | 247M/606M [00:10<00:14, 26.5MB/s] 41%|████▏     | 250M/606M [00:10<00:16, 22.2MB/s] 42%|████▏     | 254M/606M [00:10<00:14, 25.7MB/s] 43%|████▎     | 258M/606M [00:10<00:12, 28.9MB/s] 43%|████▎     | 262M/606M [00:10<00:12, 29.5MB/s] 44%|████▍     | 266M/606M [00:11<00:17, 19.9MB/s] 45%|████▍     | 270M/606M [00:11<00:15, 23.4MB/s] 45%|████▌     | 273M/606M [00:11<00:19, 18.3MB/s] 46%|████▌     | 276M/606M [00:11<00:21, 16.0MB/s] 46%|████▌     | 280M/606M [00:12<00:17, 19.8MB/s] 47%|████▋     | 283M/606M [00:12<00:22, 15.3MB/s] 47%|████▋     | 287M/606M [00:12<00:17, 19.2MB/s] 48%|████▊     | 290M/606M [00:12<00:18, 18.3MB/s] 48%|████▊     | 293M/606M [00:12<00:16, 20.3MB/s] 49%|████▉     | 297M/606M [00:13<00:17, 18.5MB/s] 50%|████▉     | 301M/606M [00:13<00:14, 22.5MB/s] 50%|█████     | 305M/606M [00:13<00:12, 26.1MB/s] 51%|█████     | 308M/606M [00:13<00:16, 19.3MB/s] 51%|█████▏    | 312M/606M [00:13<00:13, 23.1MB/s] 52%|█████▏    | 315M/606M [00:13<00:12, 24.8MB/s] 53%|█████▎    | 319M/606M [00:13<00:10, 28.2MB/s] 53%|█████▎    | 323M/606M [00:14<00:09, 31.1MB/s] 54%|█████▍    | 327M/606M [00:14<00:09, 31.5MB/s] 55%|█████▍    | 331M/606M [00:14<00:12, 23.9MB/s] 55%|█████▌    | 335M/606M [00:14<00:10, 27.2MB/s] 56%|█████▌    | 339M/606M [00:14<00:09, 29.2MB/s] 57%|█████▋    | 343M/606M [00:14<00:08, 31.8MB/s] 57%|█████▋    | 347M/606M [00:14<00:08, 33.7MB/s] 58%|█████▊    | 351M/606M [00:15<00:08, 30.8MB/s] 59%|█████▊    | 355M/606M [00:15<00:10, 24.6MB/s] 59%|█████▉    | 359M/606M [00:15<00:09, 27.7MB/s] 60%|█████▉    | 363M/606M [00:15<00:09, 28.2MB/s] 61%|██████    | 367M/606M [00:15<00:08, 30.8MB/s] 61%|██████    | 371M/606M [00:15<00:07, 33.1MB/s] 62%|██████▏   | 375M/606M [00:15<00:07, 31.7MB/s] 63%|██████▎   | 379M/606M [00:15<00:06, 34.0MB/s] 63%|██████▎   | 383M/606M [00:16<00:07, 32.4MB/s] 64%|██████▍   | 387M/606M [00:16<00:08, 28.0MB/s] 65%|██████▍   | 391M/606M [00:16<00:07, 30.7MB/s] 65%|██████▌   | 395M/606M [00:16<00:08, 24.9MB/s] 66%|██████▌   | 399M/606M [00:16<00:07, 27.9MB/s] 67%|██████▋   | 403M/606M [00:16<00:06, 30.6MB/s] 67%|██████▋   | 407M/606M [00:16<00:06, 32.8MB/s] 68%|██████▊   | 411M/606M [00:17<00:05, 34.3MB/s] 68%|██████▊   | 415M/606M [00:17<00:05, 35.0MB/s] 69%|██████▉   | 419M/606M [00:17<00:09, 21.6MB/s] 70%|██████▉   | 423M/606M [00:17<00:07, 25.0MB/s] 70%|███████   | 427M/606M [00:17<00:08, 21.9MB/s] 71%|███████   | 431M/606M [00:18<00:07, 25.3MB/s] 72%|███████▏  | 434M/606M [00:18<00:07, 22.9MB/s] 72%|███████▏  | 438M/606M [00:18<00:06, 26.4MB/s] 73%|███████▎  | 441M/606M [00:18<00:07, 23.3MB/s] 73%|███████▎  | 444M/606M [00:18<00:07, 23.3MB/s] 74%|███████▍  | 448M/606M [00:18<00:06, 26.6MB/s] 74%|███████▍  | 451M/606M [00:18<00:06, 25.6MB/s] 75%|███████▌  | 455M/606M [00:18<00:05, 29.0MB/s] 76%|███████▌  | 458M/606M [00:19<00:05, 29.5MB/s] 76%|███████▌  | 461M/606M [00:19<00:05, 27.3MB/s] 77%|███████▋  | 465M/606M [00:19<00:04, 30.5MB/s] 77%|███████▋  | 469M/606M [00:19<00:04, 31.8MB/s] 78%|███████▊  | 473M/606M [00:19<00:05, 25.6MB/s] 79%|███████▊  | 477M/606M [00:19<00:04, 28.8MB/s] 79%|███████▉  | 481M/606M [00:19<00:04, 26.3MB/s] 80%|████████  | 485M/606M [00:20<00:04, 29.3MB/s] 81%|████████  | 489M/606M [00:20<00:06, 19.1MB/s] 81%|████████▏ | 493M/606M [00:20<00:05, 22.6MB/s] 82%|████████▏ | 497M/606M [00:20<00:05, 21.9MB/s] 83%|████████▎ | 500M/606M [00:20<00:04, 23.6MB/s] 83%|████████▎ | 504M/606M [00:21<00:03, 27.3MB/s] 84%|████████▍ | 508M/606M [00:21<00:04, 21.8MB/s] 84%|████████▍ | 512M/606M [00:21<00:03, 25.3MB/s] 85%|████████▌ | 516M/606M [00:21<00:03, 28.4MB/s] 86%|████████▌ | 520M/606M [00:21<00:02, 31.1MB/s] 86%|████████▋ | 524M/606M [00:21<00:03, 23.8MB/s] 87%|████████▋ | 527M/606M [00:21<00:03, 24.8MB/s] 87%|████████▋ | 530M/606M [00:22<00:03, 22.1MB/s] 88%|████████▊ | 534M/606M [00:22<00:02, 25.8MB/s] 89%|████████▊ | 537M/606M [00:22<00:03, 23.0MB/s] 89%|████████▉ | 541M/606M [00:22<00:02, 26.6MB/s] 90%|████████▉ | 545M/606M [00:22<00:02, 29.8MB/s] 91%|█████████ | 549M/606M [00:22<00:01, 32.3MB/s] 91%|█████████▏| 553M/606M [00:22<00:01, 34.3MB/s] 92%|█████████▏| 557M/606M [00:22<00:01, 34.9MB/s] 93%|█████████▎| 561M/606M [00:23<00:01, 32.7MB/s] 93%|█████████▎| 565M/606M [00:23<00:01, 27.1MB/s] 94%|█████████▍| 569M/606M [00:23<00:01, 27.0MB/s] 95%|█████████▍| 573M/606M [00:23<00:01, 29.8MB/s] 95%|█████████▌| 577M/606M [00:23<00:00, 32.2MB/s] 96%|█████████▌| 581M/606M [00:23<00:00, 33.9MB/s] 97%|█████████▋| 585M/606M [00:23<00:00, 35.5MB/s] 97%|█████████▋| 589M/606M [00:24<00:00, 32.2MB/s] 98%|█████████▊| 593M/606M [00:24<00:00, 25.4MB/s] 98%|█████████▊| 596M/606M [00:24<00:00, 20.3MB/s] 99%|█████████▉| 600M/606M [00:24<00:00, 24.0MB/s]100%|█████████▉| 603M/606M [00:24<00:00, 24.9MB/s]100%|██████████| 606M/606M [00:24<00:00, 25.5MB/s]
+
+Archive:  animes-dataset-2023.zip
+  inflating: data/anime-dataset-2023.csv  
+  inflating: data/anime-exploratory-dataset-2023.csv  
+  inflating: data/anime-transformed-dataset-2023.csv  
+  inflating: data/assets/0-demographic-filtering.png  
+  inflating: data/assets/1-content-based-filtering.png  
+  inflating: data/assets/10-pearson-correlation-plot-p-value.png  
+  inflating: data/assets/10.1-r-squared.png  
+  inflating: data/assets/10.2-r-squared.png  
+  inflating: data/assets/11.0-normal-distribution-height.png  
+  inflating: data/assets/11.1-normal-distribution-confidence-level.png  
+  inflating: data/assets/11.10-normal-distribution-p-value.png  
+  inflating: data/assets/11.2-normal-distribution-significance-level.png  
+  inflating: data/assets/11.3-normal-distribution-significance-level.png  
+  inflating: data/assets/11.4-normal-distribution-p-value.png  
+  inflating: data/assets/11.5-normal-distribution-p-value.png  
+  inflating: data/assets/11.6-normal-distribution-p-value.png  
+  inflating: data/assets/11.7-normal-distribution-p-value.png  
+  inflating: data/assets/11.8-normal-distribution-p-value.png  
+  inflating: data/assets/11.9-normal-distribution-p-value.png  
+  inflating: data/assets/12-p-hacking.png  
+  inflating: data/assets/13.0-overlap.png  
+  inflating: data/assets/13.1-overlap.png  
+  inflating: data/assets/13.2-overlap.png  
+  inflating: data/assets/13.3-overlap.png  
+  inflating: data/assets/13.4-overlap.png  
+  inflating: data/assets/13.5-overlap.png  
+  inflating: data/assets/14.0-central-limit-theorem.png  
+  inflating: data/assets/14.1-central-limit-theorem.png  
+  inflating: data/assets/14.2-central-limit-theorem.png  
+  inflating: data/assets/15-tf-idf.png  
+  inflating: data/assets/16.0-spectral-decomposition.png  
+  inflating: data/assets/16.1-spectral-decomposition.png  
+  inflating: data/assets/17.0-svd.png  
+  inflating: data/assets/17.1-svd.png  
+  inflating: data/assets/18.0-collaborative-filtering-user-based.png  
+  inflating: data/assets/18.1-collaborative-filtering-user-based.png  
+  inflating: data/assets/19-k-nearest-neighbors.png  
+  inflating: data/assets/2-collaborative-filtering.png  
+  inflating: data/assets/20-collaborative-filtering-item-based.png  
+  inflating: data/assets/3-cosine-similarity-statquest.png  
+  inflating: data/assets/4-cosine-similarity-statquest.png  
+  inflating: data/assets/5-standard-robust-minmax-scaler.png  
+  inflating: data/assets/6-standard-robust-minmax-scaler.png  
+  inflating: data/assets/7-box-and-whisker-plot.png  
+  inflating: data/assets/8-pearson-correlation-plot.png  
+  inflating: data/assets/9-pearson-correlation-plot-correlation.png  
+  inflating: data/reports/animes-profile.html  
+  inflating: data/reports/users-details-profile.html  
+  inflating: data/users-details-2023.csv  
+  inflating: data/users-details-transformed-2023.csv  
+  inflating: data/users-score-2023.csv  
+  inflating: data/users-scores-transformed-2023.csv  
+unzip done

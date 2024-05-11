@@ -1,3 +1,6 @@
+'''
+This is the file with item_based'''
+
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -9,11 +12,10 @@
 import numpy as np
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import udf, col, avg, count, array, array_contains, row_number, size
+from pyspark.sql.functions import udf, col, avg, array_contains, row_number, size
 from pyspark.sql import functions as F
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, ArrayType, FloatType
 from pyspark.sql.window import Window
-from pyspark.ml import Pipeline
 from pyspark.ml.feature import VectorAssembler
 from pyspark.mllib.evaluation import RankingMetrics
 
@@ -30,10 +32,15 @@ from pyspark.mllib.evaluation import RankingMetrics
 # except:
 #     print('No spark is running')
 
-warehouse = "/user/team20/project/hive/warehouse"
-team = "team20"
+WAREHOUSE = "/user/team20/project/hive/warehouse"
+TEAM = "team20"
 
-spark = SparkSession.builder        .appName("{} - spark ML".format(team))        .master("yarn")        .config("hive.metastore.uris", "thrift://hadoop-02.uni.innopolis.ru:9883")        .config("spark.sql.warehouse.dir", warehouse)        .config("spark.sql.avro.compression.codec", "snappy")        .enableHiveSupport()        .getOrCreate()
+spark = SparkSession.builder.appName("f{TEAM} - spark ML")\
+    .master("yarn")\
+    .config("hive.metastore.uris", "thrift://hadoop-02.uni.innopolis.ru:9883")\
+    .config("spark.sql.warehouse.dir", WAREHOUSE)\
+    .config("spark.sql.avro.compression.codec", "snappy")\
+    .enableHiveSupport().getOrCreate()
 spark.sql("USE team20_projectdb")
 
 
@@ -50,21 +57,24 @@ schema = StructType([
                 StringType(), False)
 ])
 synopsis_df = spark.read.csv(
-    "/user/team20/project/data/synopsis_embs.csv", 
-    header=True, 
+    "/user/team20/project/data/synopsis_embs.csv",
+    header=True,
     mode="DROPMALFORMED",
     schema=schema
 )
 
 
 def read_embedding(emb: str):
+    '''
+    read_embedding'''
     emb = [float(i) for i in emb[1:-1].split(', ')]
     return emb
 
 
 read_embedding_udf = udf(read_embedding, ArrayType(FloatType()))
 
-synopsis_df = synopsis_df.withColumn('synopsis_emb', read_embedding_udf(synopsis_df['synopsis_emb_str']))
+synopsis_df = synopsis_df\
+    .withColumn('synopsis_emb', read_embedding_udf(synopsis_df['synopsis_emb_str']))
 synopsis_df = synopsis_df.drop('synopsis_emb_str')
 synopsis_df.show(5)
 
@@ -153,7 +163,10 @@ test_scores_df.show(5)
 # In[21]:
 
 
-test_rec_list = test_scores_df    .select("user_id", "anime_id", "rating")    .orderBy("user_id", "rating", ascending=False)    .groupBy("user_id")    .agg(F.collect_list("anime_id").alias("gt"))
+test_rec_list = test_scores_df.select("user_id", "anime_id", "rating")\
+    .orderBy("user_id", "rating", ascending=False)\
+    .groupBy("user_id")\
+    .agg(F.collect_list("anime_id").alias("gt"))
 test_rec_list.show()
 
 
@@ -162,13 +175,19 @@ test_rec_list.show()
 # In[22]:
 
 
-train_rec_list = scores_df    .select("user_id", "anime_id", "rating")    .orderBy("user_id", "rating", ascending=False)    .groupBy("user_id")    .agg(F.collect_list("anime_id").alias("watched"))
+train_rec_list = scores_df\
+    .select("user_id", "anime_id", "rating")\
+    .orderBy("user_id", "rating", ascending=False)\
+    .groupBy("user_id")\
+    .agg(F.collect_list("anime_id").alias("watched"))
 train_rec_list = train_rec_list.join(
     user_df,
     train_rec_list['user_id'] == user_df['user_id'],
     'inner'
 ).drop(user_df.user_id)
-train_rec_list = train_rec_list    .withColumn('watched_count', size('watched'))    .orderBy('watched_count', ascending=False)
+train_rec_list = train_rec_list\
+    .withColumn('watched_count', size('watched'))\
+    .orderBy('watched_count', ascending=False)
 # train_rec_list.show(5)
 
 
@@ -176,22 +195,24 @@ train_rec_list = train_rec_list    .withColumn('watched_count', size('watched'))
 
 
 # pick top n users based on number of scores to optimize test
-n = 1000
-top_n_user_embs = train_rec_list.limit(n)
+N = 1000
+top_n_user_embs = train_rec_list.limit(N)
 top_n_user_embs.show()
 
 
 # In[27]:
 
 
-def cosine_similarity(v1, v2):
-    # assert False, f"{type(v1)} {type(v2)}"
-    a, b = np.array(v1), np.array(v2)
+def cosine_similarity(v_1, v_2):
+    '''
+    find cosine_similarity'''
+    # assert False, f"{type(v_1)} {type(v_2)}"
+    a_1, b_1 = np.array(v_1), np.array(v_2)
     # check for nulls
-    if not np.any(a) or not np.any(b):
+    if not np.any(a_1) or not np.any(b_1):
         return -1.0
 
-    cos_sim = np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+    cos_sim = np.dot(a_1, b_1) / (np.linalg.norm(a_1) * np.linalg.norm(b_1))
     return float(cos_sim)
 
 
@@ -215,15 +236,6 @@ pred_df = pred_df.withColumn(
 pred_df.show(5)
 
 
-# In[31]:
-
-
-top_n_user_embs.count(), synopsis_df.count(), pred_df.count()
-
-
-# In[32]:
-
-
 # pick top 50 anime for each user
 k = 50
 
@@ -232,7 +244,10 @@ window_spec = Window.partitionBy("user_id").orderBy(col("similarity").desc())
 pred_df_ranked = pred_df.withColumn("rank", row_number().over(window_spec))
 # Filter out rows with row_number <= 10 to get the top 10 values for each user_id
 pred_df_top_k = pred_df_ranked.filter(col("rank") <= k)
-pred_df_top_k = pred_df_top_k    .groupby('user_id')    .agg(F.collect_list("anime_id").alias("recommendations"))
+pred_df_top_k = pred_df_top_k\
+    .groupby('user_id')\
+    .agg(F.collect_list("anime_id")\
+    .alias("recommendations"))
 pred_df_top_k.show(10)
 
 
@@ -296,13 +311,8 @@ df.write.parquet("/user/team20/project/output/evaluation", mode="append")
 # In[50]:
 
 
-with open("/home/team20/team20/bigdata-final-project-iu-2024.git/output/evaluation.csv", "a") as f:
+with open("/home/team20/team20/bigdata-final-project-iu-2024.git/output/evaluation.csv"\
+    , "a", encoding="utf-8") as f:
     f.write(','.join([str(i) for i in data[0]]))
     f.write("\n")
-
-
-# In[ ]:
-
-
-
-
+    

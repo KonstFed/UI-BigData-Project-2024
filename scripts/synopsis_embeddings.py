@@ -1,3 +1,5 @@
+'''
+this is the file'''
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -5,14 +7,11 @@
 
 # In[1]:
 
-
+from typing import List
 from tqdm.auto import tqdm
 from transformers import AutoTokenizer, AutoModel
-from typing import List
 from pyspark.sql import SparkSession
-
 import torch
-import pyspark.sql.functions as f
 
 
 # ### Load HF model
@@ -27,6 +26,8 @@ model.eval()
 
 
 def batch_embeddings(batch: List[str]):
+    '''
+    batch-embeddings'''
     encoded_input = tokenizer(batch, padding=True, truncation=True, return_tensors='pt')
     with torch.no_grad():
         model_output = model(**encoded_input)
@@ -42,10 +43,17 @@ def batch_embeddings(batch: List[str]):
 # In[3]:
 
 
-warehouse = "/user/team20/project/hive/warehouse"
-team = "team20"
+WAREHOUSE = "/user/team20/project/hive/warehouse"
+TEAM = "team20"
 
-spark = SparkSession.builder        .appName("{} - spark ML".format(team))        .master("yarn")        .config("hive.metastore.uris", "thrift://hadoop-02.uni.innopolis.ru:9883")        .config("spark.sql.warehouse.dir", warehouse)        .config("spark.sql.avro.compression.codec", "snappy")        .enableHiveSupport()        .getOrCreate()
+spark = SparkSession.builder\
+    .appName(f"{TEAM} - spark ML")\
+    .master("yarn")\
+    .config("hive.metastore.uris", "thrift://hadoop-02.uni.innopolis.ru:9883")\
+    .config("spark.sql.warehouse.dir", WAREHOUSE)\
+    .config("spark.sql.avro.compression.codec", "snappy")\
+    .enableHiveSupport()\
+    .getOrCreate()
 spark.sql("USE team20_projectdb")
 
 
@@ -62,17 +70,18 @@ df.head()
 # In[5]:
 
 
-batch_size = 4
+BATCH_SIZE = 4
 synopsis_list = df['synopsis'].tolist()
 synopsis_embs = []
+i = 0
 
-for i in tqdm(range(0, len(synopsis_list) // batch_size)):
-    batch_synopsises = synopsis_list[i * batch_size:(i + 1) * batch_size]
+for i in tqdm(range(0, len(synopsis_list) // BATCH_SIZE)):
+    batch_synopsises = synopsis_list[i * BATCH_SIZE:(i + 1) * BATCH_SIZE]
     batch_embs = batch_embeddings(batch_synopsises)
     synopsis_embs.extend(batch_embs)
 
-if (i + 1) * batch_size < len(synopsis_list):
-    batch_synopsises = synopsis_list[(i + 1) * batch_size:len(synopsis_list)]
+if (i + 1) * BATCH_SIZE < len(synopsis_list):
+    batch_synopsises = synopsis_list[(i + 1) * BATCH_SIZE:len(synopsis_list)]
     batch_embs = batch_embeddings(batch_synopsises)
     synopsis_embs.extend(batch_embs)
 
@@ -85,21 +94,6 @@ if (i + 1) * batch_size < len(synopsis_list):
 assert len(synopsis_embs) == len(synopsis_list), (len(synopsis_embs), len(synopsis_list))
 
 df['synopsis_emb'] = [emb.tolist() for emb in synopsis_embs]
-df.drop('synopsis', axis=1).to_csv('/home/team20/team20/bigdata-final-project-iu-2024.git/synopsis_embs.csv', index=False)
-
-
-# In[7]:
-
-
-# import subprocess
- 
-# cmd = 'hdfs dfs -put /home/team20/team20/bigdata-final-project-iu-2024.git/synopsis_embs.csv /user/team20/project/data/synopsis_embs.csv'
-# process = subprocess.Popen(cmd, shell=True)
-# process.communicate()
-
-
-# In[ ]:
-
-
-
-
+df.drop('synopsis', axis=1)\
+    .to_csv('/home/team20/team20/bigdata-final-project-iu-2024.git/synopsis_embs.csv', \
+    index=False)
