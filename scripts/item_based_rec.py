@@ -25,10 +25,10 @@ from pyspark.mllib.evaluation import RankingMetrics
 # In[16]:
 
 
-try:
-    spark.stop()
-except:
-    print('No spark is running')
+# try:
+#     spark.stop()
+# except:
+#     print('No spark is running')
 
 warehouse = "/user/team20/project/hive/warehouse"
 team = "team20"
@@ -176,7 +176,7 @@ train_rec_list = train_rec_list    .withColumn('watched_count', size('watched'))
 
 
 # pick top n users based on number of scores to optimize test
-n = 100
+n = 1000
 top_n_user_embs = train_rec_list.limit(n)
 top_n_user_embs.show()
 
