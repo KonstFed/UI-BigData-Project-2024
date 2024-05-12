@@ -1,14 +1,0 @@
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP DATABASE IF EXISTS team20_projectdb CASCADE;
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE DATABASE team20_projectdb LOCATION "/user/team20/project/hive/warehous e";
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team20_projectdb;
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE anime STORED AS AVRO LOCATION '/user/team20/project/war ehouse/anime'
-. . . . . . . . . . . . . . . . . . . . . . .> TBLPROPERTIES ('avro.schema.url'='/user/team20/project/warehouse/avsc/anime.a vsc');
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE users_details STORED AS AVRO LOCATION '/user/team20/pro ject/warehouse/users_details'
-. . . . . . . . . . . . . . . . . . . . . . .> TBLPROPERTIES ('avro.schema.url'='/user/team20/project/warehouse/avsc/users_d etails.avsc');
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE users_scores STORED AS AVRO LOCATION '/user/team20/proj ect/warehouse/users_scores'
-. . . . . . . . . . . . . . . . . . . . . . .> TBLPROPERTIES ('avro.schema.url'='/user/team20/project/warehouse/avsc/users_s cores.avsc');
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 

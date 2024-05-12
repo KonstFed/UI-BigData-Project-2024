@@ -1,26 +1,26 @@
 Connecting to jdbc:hive2://hadoop-03.uni.innopolis.ru:10001
-2024-04-23 21:07:04,300 INFO jdbc.Utils: Supplied authorities: hadoop-03.uni.innopolis.ru:10001
-2024-04-23 21:07:04,301 INFO jdbc.Utils: Resolved authority: hadoop-03.uni.innopolis.ru:10001
+2024-05-11 14:18:10,370 INFO jdbc.Utils: Supplied authorities: hadoop-03.uni.innopolis.ru:10001
+2024-05-11 14:18:10,371 INFO jdbc.Utils: Resolved authority: hadoop-03.uni.innopolis.ru:10001
 Connected to: Apache Hive (version 3.1.3)
 Driver: Hive JDBC (version 2.3.9)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> use team20_projectdb;
-INFO  : Compiling command(queryId=hive_20240423210704_ef1c4647-d6c7-422c-90cf-5b27a0d7444b): use team20_projectdb
+INFO  : Compiling command(queryId=hive_20240511141810_974aad09-1ebe-40d7-a3b9-103355c438b4): use team20_projectdb
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20240423210704_ef1c4647-d6c7-422c-90cf-5b27a0d7444b : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20240511141810_974aad09-1ebe-40d7-a3b9-103355c438b4 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
   Stage: Stage-0
 
 
-INFO  : Completed compiling command(queryId=hive_20240423210704_ef1c4647-d6c7-422c-90cf-5b27a0d7444b); Time taken: 0.053 seconds
-INFO  : Executing command(queryId=hive_20240423210704_ef1c4647-d6c7-422c-90cf-5b27a0d7444b): use team20_projectdb
+INFO  : Completed compiling command(queryId=hive_20240511141810_974aad09-1ebe-40d7-a3b9-103355c438b4); Time taken: 0.048 seconds
+INFO  : Executing command(queryId=hive_20240511141810_974aad09-1ebe-40d7-a3b9-103355c438b4): use team20_projectdb
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20240423210704_ef1c4647-d6c7-422c-90cf-5b27a0d7444b); Time taken: 0.008 seconds
+INFO  : Completed executing command(queryId=hive_20240511141810_974aad09-1ebe-40d7-a3b9-103355c438b4); Time taken: 0.006 seconds
 INFO  : OK
-No rows affected (0.099 seconds)
+No rows affected (0.095 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE anime_part_buck(
 . . . . . . . . . . . . . . . . . . . . . . .>     id int, 
@@ -46,7 +46,7 @@ No rows affected (0.099 seconds)
 . . . . . . . . . . . . . . . . . . . . . . .>     CLUSTERED BY (id) into 7 buckets
 . . . . . . . . . . . . . . . . . . . . . . .>     STORED AS AVRO LOCATION '/user/team20/project/hive/warehouse/anime_part_b uck' 
 . . . . . . . . . . . . . . . . . . . . . . .>     TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY');
-INFO  : Compiling command(queryId=hive_20240423210704_cad113ee-8b07-4e39-9c80-8821ab193cf5): CREATE EXTERNAL TABLE anime_part_buck(
+INFO  : Compiling command(queryId=hive_20240511141810_a570ec29-8cdf-4ad3-810a-78043f8366e2): CREATE EXTERNAL TABLE anime_part_buck(
 id int,
 title varchar(512),
 score float,
@@ -72,7 +72,7 @@ STORED AS AVRO LOCATION '/user/team20/project/hive/warehouse/anime_part_buck'
 TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY')
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20240423210704_cad113ee-8b07-4e39-9c80-8821ab193cf5 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20240511141810_a570ec29-8cdf-4ad3-810a-78043f8366e2 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -93,8 +93,8 @@ STAGE PLANS:
           isExternal: true
 
 
-INFO  : Completed compiling command(queryId=hive_20240423210704_cad113ee-8b07-4e39-9c80-8821ab193cf5); Time taken: 0.024 seconds
-INFO  : Executing command(queryId=hive_20240423210704_cad113ee-8b07-4e39-9c80-8821ab193cf5): CREATE EXTERNAL TABLE anime_part_buck(
+INFO  : Completed compiling command(queryId=hive_20240511141810_a570ec29-8cdf-4ad3-810a-78043f8366e2); Time taken: 0.031 seconds
+INFO  : Executing command(queryId=hive_20240511141810_a570ec29-8cdf-4ad3-810a-78043f8366e2): CREATE EXTERNAL TABLE anime_part_buck(
 id int,
 title varchar(512),
 score float,
@@ -119,12 +119,12 @@ CLUSTERED BY (id) into 7 buckets
 STORED AS AVRO LOCATION '/user/team20/project/hive/warehouse/anime_part_buck'
 TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY')
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20240423210704_cad113ee-8b07-4e39-9c80-8821ab193cf5); Time taken: 0.035 seconds
+INFO  : Completed executing command(queryId=hive_20240511141810_a570ec29-8cdf-4ad3-810a-78043f8366e2); Time taken: 0.029 seconds
 INFO  : OK
-No rows affected (0.085 seconds)
+No rows affected (0.087 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.dynamic.partition.mode=nonstrict;
-No rows affected (0.002 seconds)
+No rows affected (0.003 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> INSERT INTO TABLE anime_part_buck PARTITION (rating)
 . . . . . . . . . . . . . . . . . . . . . . .> SELECT
@@ -148,7 +148,7 @@ No rows affected (0.002 seconds)
 . . . . . . . . . . . . . . . . . . . . . . .>     members,
 . . . . . . . . . . . . . . . . . . . . . . .>     rating
 . . . . . . . . . . . . . . . . . . . . . . .> FROM anime;
-INFO  : Compiling command(queryId=hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f): INSERT INTO TABLE anime_part_buck PARTITION (rating)
+INFO  : Compiling command(queryId=hive_20240511141810_9da66280-850f-4efa-934e-335a24d01381): INSERT INTO TABLE anime_part_buck PARTITION (rating)
 SELECT
 id,
 title,
@@ -172,7 +172,7 @@ rating
 FROM anime
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:_col0, type:int, comment:null), FieldSchema(name:_col1, type:varchar(512), comment:null), FieldSchema(name:_col2, type:float, comment:null), FieldSchema(name:_col3, type:varchar(4096), comment:null), FieldSchema(name:_col4, type:varchar(4096), comment:null), FieldSchema(name:_col5, type:varchar(8), comment:null), FieldSchema(name:_col6, type:int, comment:null), FieldSchema(name:_col7, type:boolean, comment:null), FieldSchema(name:_col8, type:varchar(2048), comment:null), FieldSchema(name:_col9, type:varchar(2048), comment:null), FieldSchema(name:_col10, type:varchar(1024), comment:null), FieldSchema(name:_col11, type:varchar(64), comment:null), FieldSchema(name:_col12, type:varchar(64), comment:null), FieldSchema(name:_col13, type:int, comment:null), FieldSchema(name:_col14, type:int, comment:null), FieldSchema(name:_col15, type:int, comment:null), FieldSchema(name:_col16, type:int, comment:null), FieldSchema(name:_col17, type:int, comment:null), FieldSchema(name:_col18, type:string, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20240511141810_9da66280-850f-4efa-934e-335a24d01381 : STAGE DEPENDENCIES:
   Stage-1 is a root stage [MAPRED]
   Stage-2 depends on stages: Stage-1 [DEPENDENCY_COLLECTION]
   Stage-0 depends on stages: Stage-2 [MOVE]
@@ -181,11 +181,11 @@ INFO  : EXPLAIN output for queryid hive_20240423210704_1663685d-a197-4546-8874-d
 STAGE PLANS:
   Stage: Stage-1
     Tez
-      DagId: hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f:428
+      DagId: hive_20240511141810_9da66280-850f-4efa-934e-335a24d01381:1375
       Edges:
         Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
         Reducer 3 <- Reducer 2 (SIMPLE_EDGE)
-      DagName: hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f:428
+      DagName: hive_20240511141810_9da66280-850f-4efa-934e-335a24d01381:1375
       Vertices:
         Map 1 
             Map Operator Tree:
@@ -232,7 +232,7 @@ STAGE PLANS:
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     totalSize 7271520
-                    transient_lastDdlTime 1713895623
+                    transient_lastDdlTime 1715426289
                   serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                 
                     input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
@@ -256,7 +256,7 @@ STAGE PLANS:
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
                       totalSize 7271520
-                      transient_lastDdlTime 1713895623
+                      transient_lastDdlTime 1715426289
                     serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                     name: team20_projectdb.anime
                   name: team20_projectdb.anime
@@ -272,10 +272,10 @@ STAGE PLANS:
                 File Output Operator
                   compressed: false
                   GlobalTableId: 1
-                  directory: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-04-23_21-07-04_866_5713692289707034208-2/-ext-10000
+                  directory: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-05-11_14-18-10_942_8224194236667398353-682/-ext-10000
                   NumFilesPerFileSink: 1
                   Statistics: Num rows: 59602 Data size: 72715200 Basic stats: COMPLETE Column stats: NONE
-                  Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-04-23_21-07-04_866_5713692289707034208-2/-ext-10000/
+                  Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-05-11_14-18-10_942_8224194236667398353-682/-ext-10000/
                   table:
                       input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
                       output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
@@ -299,7 +299,7 @@ STAGE PLANS:
                         serialization.ddl struct anime_part_buck { i32 id, varchar(512) title, float score, varchar(4096) genres, varchar(4096) synopsis, varchar(8) type, i32 episodes, bool is_airing, varchar(2048) producers, varchar(2048) licensors, varchar(1024) studios, varchar(64) source, varchar(64) duration, i32 rank, i32 popularity, i32 favorites, i32 scored_by, i32 members}
                         serialization.format 1
                         serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                        transient_lastDdlTime 1713895624
+                        transient_lastDdlTime 1715426290
                       serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
                       name: team20_projectdb.anime_part_buck
                   TotalFiles: 1
@@ -340,10 +340,10 @@ STAGE PLANS:
                   File Output Operator
                     compressed: false
                     GlobalTableId: 0
-                    directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team20/849f041d-c770-43e1-99fa-20b023d29889/hive_2024-04-23_21-07-05_017_3149265087638726574-2/-mr-10000/.hive-staging_hive_2024-04-23_21-07-05_017_3149265087638726574-2/-ext-10001
+                    directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team20/d6f99a8d-e461-4489-9955-9b42a1f9b387/hive_2024-05-11_14-18-11_096_2509849387568349442-682/-mr-10000/.hive-staging_hive_2024-05-11_14-18-11_096_2509849387568349442-682/-ext-10001
                     NumFilesPerFileSink: 1
                     Statistics: Num rows: 29801 Data size: 36357600 Basic stats: COMPLETE Column stats: NONE
-                    Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team20/849f041d-c770-43e1-99fa-20b023d29889/hive_2024-04-23_21-07-05_017_3149265087638726574-2/-mr-10000/.hive-staging_hive_2024-04-23_21-07-05_017_3149265087638726574-2/-ext-10001/
+                    Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team20/d6f99a8d-e461-4489-9955-9b42a1f9b387/hive_2024-05-11_14-18-11_096_2509849387568349442-682/-mr-10000/.hive-staging_hive_2024-05-11_14-18-11_096_2509849387568349442-682/-ext-10001/
                     table:
                         input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                         output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -369,7 +369,7 @@ STAGE PLANS:
           partition:
             rating 
           replace: false
-          source: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-04-23_21-07-04_866_5713692289707034208-2/-ext-10000
+          source: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-05-11_14-18-10_942_8224194236667398353-682/-ext-10000
           table:
               input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
               output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
@@ -393,14 +393,14 @@ STAGE PLANS:
                 serialization.ddl struct anime_part_buck { i32 id, varchar(512) title, float score, varchar(4096) genres, varchar(4096) synopsis, varchar(8) type, i32 episodes, bool is_airing, varchar(2048) producers, varchar(2048) licensors, varchar(1024) studios, varchar(64) source, varchar(64) duration, i32 rank, i32 popularity, i32 favorites, i32 scored_by, i32 members}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
-                transient_lastDdlTime 1713895624
+                transient_lastDdlTime 1715426290
               serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
               name: team20_projectdb.anime_part_buck
 
   Stage: Stage-3
     Stats Work
       Basic Stats Work:
-          Stats Aggregation Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-04-23_21-07-04_866_5713692289707034208-2/-ext-10000/
+          Stats Aggregation Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-05-11_14-18-10_942_8224194236667398353-682/-ext-10000/
       Column Stats Desc:
           Columns: id, title, score, genres, synopsis, type, episodes, is_airing, producers, licensors, studios, source, duration, rank, popularity, favorites, scored_by, members
           Column Types: int, varchar(512), float, varchar(4096), varchar(4096), varchar(8), int, boolean, varchar(2048), varchar(2048), varchar(1024), varchar(64), varchar(64), int, int, int, int, int
@@ -408,8 +408,8 @@ STAGE PLANS:
           Is Table Level Stats: false
 
 
-INFO  : Completed compiling command(queryId=hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f); Time taken: 0.205 seconds
-INFO  : Executing command(queryId=hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f): INSERT INTO TABLE anime_part_buck PARTITION (rating)
+INFO  : Completed compiling command(queryId=hive_20240511141810_9da66280-850f-4efa-934e-335a24d01381); Time taken: 0.2 seconds
+INFO  : Executing command(queryId=hive_20240511141810_9da66280-850f-4efa-934e-335a24d01381): INSERT INTO TABLE anime_part_buck PARTITION (rating)
 SELECT
 id,
 title,
@@ -431,14 +431,14 @@ scored_by,
 members,
 rating
 FROM anime
-INFO  : Query ID = hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f
+INFO  : Query ID = hive_20240511141810_9da66280-850f-4efa-934e-335a24d01381
 INFO  : Total jobs = 1
 INFO  : Launching Job 1 out of 1
 INFO  : Starting task [Stage-1:MAPRED] in serial mode
-INFO  : Subscribed to counters: [] for queryId: hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f
+INFO  : Subscribed to counters: [] for queryId: hive_20240511141810_9da66280-850f-4efa-934e-335a24d01381
 INFO  : Tez session hasn't been created yet. Opening session
 INFO  : Dag name: INSERT INTO TABLE anime_part_buck PA...anime (Stage-1)
-INFO  : Status: Running (Executing on YARN cluster with App id application_1712530286381_1703)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1715375828572_0514)
 
 [2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -447,16 +447,7 @@ INFO  : Status: Running (Executing on YARN cluster with App id application_17125
 Reducer 2        container        INITED      7          0        0        7       0       0  
 Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 1.69 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[9A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container        INITED      1          0        0        1       0       0  
-Reducer 2        container        INITED      7          0        0        7       0       0  
-Reducer 3        container        INITED      1          0        0        1       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 2.19 s     
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 2.24 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -465,7 +456,7 @@ Reducer 3        container        INITED      1          0        0        1    
 Reducer 2        container        INITED      7          0        0        7       0       0  
 Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 2.70 s     
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 3.25 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -474,25 +465,7 @@ Reducer 3        container        INITED      1          0        0        1    
 Reducer 2        container        INITED      7          0        0        7       0       0  
 Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 3.20 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[9A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      1          0        1        0       0       0  
-Reducer 2        container        INITED      7          0        0        7       0       0  
-Reducer 3        container        INITED      1          0        0        1       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 3.70 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[9A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      1          0        1        0       0       0  
-Reducer 2        container        INITED      7          0        0        7       0       0  
-Reducer 3        container        INITED      1          0        0        1       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 4.20 s     
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 4.25 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -501,7 +474,7 @@ Reducer 3        container        INITED      1          0        0        1    
 Reducer 2        container       RUNNING      7          0        1        6       0       0  
 Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/03  [==>>------------------------] 11%   ELAPSED TIME: 4.70 s     
+[2K[31;1mVERTICES: 01/03  [==>>------------------------] 11%   ELAPSED TIME: 5.75 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -510,16 +483,16 @@ Reducer 3        container        INITED      1          0        0        1    
 Reducer 2        container       RUNNING      7          1        1        5       0       0  
 Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/03  [=====>>---------------------] 22%   ELAPSED TIME: 5.21 s     
+[2K[31;1mVERTICES: 01/03  [=====>>---------------------] 22%   ELAPSED TIME: 7.25 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 .      container       RUNNING      7          2        1        4       0       0  
+Reducer 2 ..     container       RUNNING      7          3        0        4       0       0  
 Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/03  [========>>------------------] 33%   ELAPSED TIME: 5.71 s     
+[2K[31;1mVERTICES: 01/03  [===========>>---------------] 44%   ELAPSED TIME: 8.76 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -528,34 +501,25 @@ Reducer 3        container        INITED      1          0        0        1    
 Reducer 2 ..     container       RUNNING      7          3        1        3       0       0  
 Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/03  [===========>>---------------] 44%   ELAPSED TIME: 6.21 s     
+[2K[31;1mVERTICES: 01/03  [===========>>---------------] 44%   ELAPSED TIME: 10.26 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 ....   container       RUNNING      7          5        1        1       0       0  
-Reducer 3        container       RUNNING      1          0        1        0       0       0  
+Reducer 2 ...    container       RUNNING      7          4        1        2       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/03  [=================>>---------] 66%   ELAPSED TIME: 6.71 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[9A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
-Reducer 2 ....   container       RUNNING      7          5        2        0       0       0  
-Reducer 3        container       RUNNING      1          0        1        0       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/03  [=================>>---------] 66%   ELAPSED TIME: 7.72 s     
+[2K[31;1mVERTICES: 01/03  [==============>>------------] 55%   ELAPSED TIME: 11.76 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
 Reducer 2 .....  container       RUNNING      7          6        1        0       0       0  
-Reducer 3        container       RUNNING      1          0        1        0       0       0  
+Reducer 3        container        INITED      1          0        0        1       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 01/03  [====================>>------] 77%   ELAPSED TIME: 8.72 s     
+[2K[31;1mVERTICES: 01/03  [====================>>------] 77%   ELAPSED TIME: 13.27 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -564,7 +528,7 @@ Reducer 3        container       RUNNING      1          0        1        0    
 Reducer 2 ...... container     SUCCEEDED      7          7        0        0       0       0  
 Reducer 3 ...... container     SUCCEEDED      1          1        0        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 9.72 s     
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 14.77 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 [9A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -573,25 +537,43 @@ Reducer 3 ...... container     SUCCEEDED      1          1        0        0    
 Reducer 2 ...... container     SUCCEEDED      7          7        0        0       0       0  
 Reducer 3 ...... container     SUCCEEDED      1          1        0        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 10.38 s    
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 16.77 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 ...... container     SUCCEEDED      7          7        0        0       0       0  
+Reducer 3 ...... container     SUCCEEDED      1          1        0        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 18.77 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 ...... container     SUCCEEDED      7          7        0        0       0       0  
+Reducer 3 ...... container     SUCCEEDED      1          1        0        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 18.97 s    
 [22;0m[2K----------------------------------------------------------------------------------------------
 INFO  : Starting task [Stage-2:DEPENDENCY_COLLECTION] in serial mode
 INFO  : Starting task [Stage-0:MOVE] in serial mode
-INFO  : Loading data to table team20_projectdb.anime_part_buck partition (rating=null) from hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-04-23_21-07-04_866_5713692289707034208-2/-ext-10000
+INFO  : Loading data to table team20_projectdb.anime_part_buck partition (rating=null) from hdfs://hadoop-02.uni.innopolis.ru:8020/user/team20/project/hive/warehouse/anime_part_buck/.hive-staging_hive_2024-05-11_14-18-10_942_8224194236667398353-682/-ext-10000
 INFO  : 
 
-INFO  : 	 Time taken to load dynamic partitions: 0.272 seconds
-INFO  : 	 Time taken for adding to write entity : 0.001 seconds
+INFO  : 	 Time taken to load dynamic partitions: 1.77 seconds
+INFO  : 	 Time taken for adding to write entity : 0.002 seconds
 INFO  : Starting task [Stage-3:STATS] in serial mode
-INFO  : Completed executing command(queryId=hive_20240423210704_1663685d-a197-4546-8874-d8f79ae90b9f); Time taken: 13.784 seconds
+INFO  : Completed executing command(queryId=hive_20240511141810_9da66280-850f-4efa-934e-335a24d01381); Time taken: 34.574 seconds
 INFO  : OK
-No rows affected (14.001 seconds)
+No rows affected (34.822 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS anime;
-INFO  : Compiling command(queryId=hive_20240423210718_2bc140c2-1ec5-4a46-8129-2bb2d1a946d3): DROP TABLE IF EXISTS anime
+INFO  : Compiling command(queryId=hive_20240511141845_6ee8fb84-1a9c-47aa-9547-0e9555242435): DROP TABLE IF EXISTS anime
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20240423210718_2bc140c2-1ec5-4a46-8129-2bb2d1a946d3 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20240511141845_6ee8fb84-1a9c-47aa-9547-0e9555242435 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
@@ -601,11 +583,11 @@ STAGE PLANS:
           table: anime
 
 
-INFO  : Completed compiling command(queryId=hive_20240423210718_2bc140c2-1ec5-4a46-8129-2bb2d1a946d3); Time taken: 0.029 seconds
-INFO  : Executing command(queryId=hive_20240423210718_2bc140c2-1ec5-4a46-8129-2bb2d1a946d3): DROP TABLE IF EXISTS anime
+INFO  : Completed compiling command(queryId=hive_20240511141845_6ee8fb84-1a9c-47aa-9547-0e9555242435); Time taken: 0.126 seconds
+INFO  : Executing command(queryId=hive_20240511141845_6ee8fb84-1a9c-47aa-9547-0e9555242435): DROP TABLE IF EXISTS anime
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20240423210718_2bc140c2-1ec5-4a46-8129-2bb2d1a946d3); Time taken: 0.051 seconds
+INFO  : Completed executing command(queryId=hive_20240511141845_6ee8fb84-1a9c-47aa-9547-0e9555242435); Time taken: 0.306 seconds
 INFO  : OK
-No rows affected (0.091 seconds)
+No rows affected (0.491 seconds)
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001

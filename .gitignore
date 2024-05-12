@@ -6,6 +6,7 @@ objects
 
 *.save
 *.save.*
-
+*.zip
 # maybe need to stay
 *.log
+notebooks/*.csv

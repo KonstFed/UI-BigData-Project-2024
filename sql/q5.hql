@@ -22,4 +22,5 @@ ROW FORMAT DELIMITED FIELDS
 TERMINATED BY ',' 
 SELECT * FROM q5_results;
 
-SELECT type FROM q5_results;
+SELECT * FROM q5_results;
+

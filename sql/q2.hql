@@ -19,5 +19,6 @@ FROM anime_part_buck;
 INSERT OVERWRITE DIRECTORY '/user/team20/project/output/q2' 
 ROW FORMAT DELIMITED FIELDS 
 TERMINATED BY ','
+SELECT * FROM q2_results;
 
 SELECT * FROM q2_results;
